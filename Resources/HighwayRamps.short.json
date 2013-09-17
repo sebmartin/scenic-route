@@ -1,0 +1,257 @@
+[
+	{
+		"highway":   "ON-417",
+		"name":      "Anderson",
+		"number":    "104",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.36965,
+		"longitude": -75.538924,
+		"rampRects": [
+				{
+					"topLeftLat": 45.370434,
+					"topLeftLng": -75.53901,
+					"bottomRightLat": 45.369552,
+					"bottomRightLng": -75.537368
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Anderson",
+		"number":    "104",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.369016, 
+		"longitude": -75.535512,
+		"rampRects": [
+				{
+					"topLeftLat": 45.370434,
+					"topLeftLng": -75.537293,
+					"bottomRightLat": 45.36928,
+					"bottomRightLng": -75.53578
+				},
+				{
+					"topLeftLat": 45.369295,
+					"topLeftLng": -75.535887,
+					"bottomRightLat": 45.369032,
+					"bottomRightLng": -75.535265
+				},
+				{
+					"topLeftLat": 45.369333,
+					"topLeftLng": -75.536349,
+					"bottomRightLat": 45.369084,
+					"bottomRightLng": -75.535877
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Anderson",
+		"number":    "104",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.369446,
+		"longitude": -75.542797,
+		"rampRects": [
+				{
+					"topLeftLat": 45.369207,
+					"topLeftLng": -75.542672,
+					"bottomRightLat": 45.368127,
+					"bottomRightLng": -75.541027
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Anderson",
+		"number":    "104",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.368805,
+		"longitude": -75.538446,
+		"rampRects": [
+				{
+					"topLeftLat": 45.368896,
+					"topLeftLng": -75.540758,
+					"bottomRightLat": 45.36781,
+					"bottomRightLng": -75.539231
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.398051,
+		"longitude": -75.592477,
+		"rampRects": [
+				{
+					"topLeftLat": 45.397373,
+					"topLeftLng": -75.592343,
+					"bottomRightLat": 45.396981,
+					"bottomRightLng": -75.590873
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.401433,
+		"longitude": -75.593453,
+		"rampRects": [
+				{
+					"topLeftLat": 45.400778,
+					"topLeftLng": -75.592618,
+					"bottomRightLat": 45.399162,
+					"bottomRightLng": -75.590331
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.393726,
+		"longitude": -75.591924,
+		"rampRects": [
+				{
+					"topLeftLat": 45.396921,
+					"topLeftLng": -75.592096,
+					"bottomRightLat": 45.395188,
+					"bottomRightLng": -75.590454
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.401234,
+		"longitude": -75.594408,
+		"rampRects": [
+				{
+					"topLeftLat": 45.400665,
+					"topLeftLng": -75.595561,
+					"bottomRightLat": 45.399256,
+					"bottomRightLng": -75.594159
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.398463,
+		"longitude": -75.593241,
+		"rampRects": [
+				{
+					"topLeftLat": 45.399241,
+					"topLeftLng": -75.594896,
+					"bottomRightLat": 45.398616,
+					"bottomRightLng": -75.593512
+				}
+			]
+	},
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.413153,
+		"longitude": -75.605378,
+		"rampRects": [
+				{
+					"topLeftLat": 45.41423,
+					"topLeftLng": -75.607063,
+					"bottomRightLat": 45.413342,
+					"bottomRightLng": -75.605335
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.413635,
+		"longitude": -75.608211,
+		"rampRects": [
+				{
+					"topLeftLat": 45.414148,
+					"topLeftLng": -75.60806,
+					"bottomRightLat": 45.4135,
+					"bottomRightLng": -75.607181
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.415292,
+		"longitude": -75.611376,
+		"rampRects": [
+				{
+					"topLeftLat": 45.4151,
+					"topLeftLng": -75.610791,
+					"bottomRightLat": 45.414731,
+					"bottomRightLng": -75.608162
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.415682,
+		"longitude": -75.612832,
+		"rampRects": [
+				{
+					"topLeftLat": 45.415292,
+					"topLeftLng": -75.612813,
+					"bottomRightLat": 45.414517,
+					"bottomRightLng": -75.612352
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.414351,
+		"longitude": -75.61129,
+		"rampRects": [
+				{
+					"topLeftLat": 45.414566,
+					"topLeftLng": -75.612443,
+					"bottomRightLat": 45.414381,
+					"bottomRightLng": -75.61144
+				}
+			]
+	}
+]

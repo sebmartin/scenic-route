@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DirectionsResponse>
+ <status>OK</status>
+ <route>
+  <summary>ON-417 W</summary>
+  <leg>
+   <step>
+    <travel_mode>DRIVING</travel_mode>
+
+    <start_location>
+     <lat>45.4032800</lat>
+     <lng>-75.5835100</lng>
+    </start_location>
+    <end_location>
+     <lat>45.4010400</lat>
+     <lng>-75.5847100</lng>
+
+    </end_location>
+    <polyline>
+     <points>oybtG|kilMZhJFb@NVZPp@?z@W`@UtCqCb@Md@D</points>
+     <levels>B???@?????B</levels>
+    </polyline>
+    <duration>
+     <value>61</value>
+
+     <text>1 min</text>
+    </duration>
+    <html_instructions>Head &lt;b&gt;west&lt;/b&gt; toward &lt;b&gt;Walkley Rd W/Regional Road 74 W&lt;/b&gt;</html_instructions>
+    <distance>
+
+     <value>414</value>
+     <text>0.4 km</text>
+    </distance>
+   </step>
+   <step>
+    <travel_mode>DRIVING</travel_mode>
+    <start_location>
+
+     <lat>45.4010400</lat>
+     <lng>-75.5847100</lng>
+    </start_location>
+    <end_location>
+     <lat>45.3995300</lat>
+     <lng>-75.5891300</lng>
+    </end_location>
+
+    <polyline>
+     <points>okbtGlsilM@j@nG~UZfB</points>
+     <levels>B??B</levels>
+    </polyline>
+    <duration>
+     <value>55</value>
+     <text>1 min</text>
+
+    </duration>
+    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Walkley Rd W/Regional Road 74 W&lt;/b&gt;</html_instructions>
+    <distance>
+     <value>386</value>
+
+     <text>0.4 km</text>
+    </distance>
+   </step>
+   <step>
+    <travel_mode>DRIVING</travel_mode>
+    <start_location>
+     <lat>45.3995300</lat>
+
+     <lng>-75.5891300</lng>
+    </start_location>
+    <end_location>
+     <lat>45.4193300</lat>
+     <lng>-75.6501200</lng>
+    </end_location>
+    <polyline>
+
+     <points>abbtG`ojlMv@|E@|BGp@_@pAiArAyQbPSTCReGzEeEvCeCrAeC`A_NjDaC~@gD|BeD|DmAvB}AlDqAzEu@|FiAvP_@dDm@dD{@~CgAzCgAtBmBlCmBlB}AjAkD~AeCn@mM~AqAf@wAx@sCbC{B|Cu@~A{AfFu@vEWlEAnD`@vG^fCrEdRfBdJvA~JjAhMt@vRnEr`B</points>
+     <levels>B????@????@???@?@??@???@???@??@???@???A???@????@?B</levels>
+    </polyline>
+    <duration>
+     <value>275</value>
+     <text>5 mins</text>
+    </duration>
+
+    <html_instructions>Merge onto &lt;b&gt;ON-417 W&lt;/b&gt; via the ramp to &lt;b&gt;Ottawa&lt;/b&gt;</html_instructions>
+    <distance>
+     <value>6358</value>
+     <text>6.4 km</text>
+
+    </distance>
+   </step>
+   <step>
+    <travel_mode>DRIVING</travel_mode>
+    <start_location>
+     <lat>45.4193300</lat>
+     <lng>-75.6501200</lng>
+
+    </start_location>
+    <end_location>
+     <lat>45.4195300</lat>
+     <lng>-75.6554000</lng>
+    </end_location>
+    <polyline>
+     <points>y}etGflvlMj@tUa@`Eq@fC</points>
+
+     <levels>B??B</levels>
+    </polyline>
+    <duration>
+     <value>31</value>
+     <text>1 min</text>
+    </duration>
+    <html_instructions>Take exit &lt;b&gt;117&lt;/b&gt; for &lt;b&gt;Vanier Parkway&lt;/b&gt; toward &lt;b&gt;Promensade/Riverside Drive&lt;/b&gt;</html_instructions>
+
+    <distance>
+     <value>423</value>
+     <text>0.4 km</text>
+    </distance>
+   </step>
+   <step>
+    <travel_mode>DRIVING</travel_mode>
+
+    <start_location>
+     <lat>45.4195300</lat>
+     <lng>-75.6554000</lng>
+    </start_location>
+    <end_location>
+     <lat>45.4245100</lat>
+     <lng>-75.6621800</lng>
+
+    </end_location>
+    <polyline>
+     <points>a_ftGfmwlMk@xEm@|@qBnAsBjCm@lA}DdMo@rAy@dA}BfBiA`@eC^</points>
+     <levels>B??????@???B</levels>
+    </polyline>
+    <duration>
+     <value>118</value>
+
+     <text>2 mins</text>
+    </duration>
+    <html_instructions>Keep &lt;b&gt;right&lt;/b&gt; at the fork and merge onto &lt;b&gt;Regional Road 19/Vanier Pkwy N&lt;/b&gt;</html_instructions>
+    <distance>
+
+     <value>810</value>
+     <text>0.8 km</text>
+    </distance>
+   </step>
+   <step>
+    <travel_mode>DRIVING</travel_mode>
+    <start_location>
+
+     <lat>45.4245100</lat>
+     <lng>-75.6621800</lng>
+    </start_location>
+    <end_location>
+     <lat>45.4248200</lat>
+     <lng>-75.6570700</lng>
+    </end_location>
+
+    <polyline>
+     <points>e~ftGrwxlM}@}^</points>
+     <levels>BB</levels>
+    </polyline>
+    <duration>
+     <value>62</value>
+     <text>1 min</text>
+
+    </duration>
+    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Queen Mary St&lt;/b&gt;</html_instructions>
+    <distance>
+     <value>401</value>
+
+     <text>0.4 km</text>
+    </distance>
+   </step>
+   <duration>
+    <value>602</value>
+    <text>10 mins</text>
+   </duration>
+
+   <distance>
+    <value>8792</value>
+    <text>8.8 km</text>
+   </distance>
+   <start_location>
+    <lat>45.4032800</lat>
+    <lng>-75.5835100</lng>
+
+   </start_location>
+   <end_location>
+    <lat>45.4248200</lat>
+    <lng>-75.6570700</lng>
+   </end_location>
+   <start_address>Unnamed Rd, Ottawa, ON K1C, Canada</start_address>
+   <end_address>222 Queen Mary St, Ottawa, ON K1K 1S3, Canada</end_address>
+
+  </leg>
+  <copyrights>Map data ©2010 Google</copyrights>
+  <overview_polyline>
+   <points>oybtG|kilMZhJFb@NVZPp@?z@W`@UtCqCb@Md@D@j@nG~UrAdI@|BGp@_@pAiArAyQbPSTCReGzEeEvCeCrAeC`AwObEyC|AwAfAqAtA_AjAaBrC}AlD{@tCw@pESpBiAvP_@dDm@dD{@~CgAzCgAtBqCtD_CpBkBjAgBr@eCn@mM~AqAf@sBnAwBlB{B|C_B`EiAtE]fCYvFDrEZhE^fCrEdRfBdJvA~JjAhMZtGpAjc@bE~}AMpBmAnFOvBShAm@|@qBnAsBjCm@lA}DdMo@rAy@dA}BfBiA`@eC^}@}^</points>
+   <levels>B???@?????@?????@?????@?????@???@???????@??@????@???A???@????@??@???@?????@???@B</levels>
+  </overview_polyline>
+ </route>
+
+</DirectionsResponse>

@@ -1,0 +1,874 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* ScenicRouteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* ScenicRouteAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		55163F7B12877347009D5098 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55163F7A12877347009D5098 /* CoreData.framework */; };
+		5516A6E012C46A5A0007D885 /* destination-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5516A6DF12C46A5A0007D885 /* destination-bg.png */; };
+		5516A6ED12C470FB0007D885 /* swap.png in Resources */ = {isa = PBXBuildFile; fileRef = 5516A6EC12C470FB0007D885 /* swap.png */; };
+		5516A72012C477060007D885 /* gps-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5516A71F12C477060007D885 /* gps-arrow.png */; };
+		552F71FC12AB1BA8002A4114 /* POIAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F71FA12AB1BA8002A4114 /* POIAnnotation.m */; };
+		552F720812AB1C29002A4114 /* YellowPagesDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F71FF12AB1C29002A4114 /* YellowPagesDataParser.m */; };
+		552F720912AB1C29002A4114 /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F720012AB1C29002A4114 /* DataParser.m */; };
+		552F720A12AB1C29002A4114 /* CanPagesDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F720412AB1C29002A4114 /* CanPagesDataParser.m */; };
+		552F720B12AB1C29002A4114 /* GoogleDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F720712AB1C29002A4114 /* GoogleDataParser.m */; };
+		5565EE0B12D57858003E881B /* yp_badge.png in Resources */ = {isa = PBXBuildFile; fileRef = 5565EE0A12D57858003E881B /* yp_badge.png */; };
+		55A0671712B7381A00C316DD /* AnnotationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A0671412B7381A00C316DD /* AnnotationViewController.xib */; };
+		55A0671812B7381A00C316DD /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A0671512B7381A00C316DD /* AnnotationViewController.m */; };
+		55AC50A212BD78F3005B61C0 /* yp_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 55AC50A112BD78F3005B61C0 /* yp_icon.png */; };
+		960383DC126C698B00BEC8F3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960383DB126C698B00BEC8F3 /* MapKit.framework */; };
+		960383E0126C699500BEC8F3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960383DF126C699500BEC8F3 /* CoreLocation.framework */; };
+		960383EA126C69F700BEC8F3 /* MapStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960383E9126C69F700BEC8F3 /* MapStateViewController.m */; };
+		960383ED126C6BEA00BEC8F3 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960383EC126C6BEA00BEC8F3 /* SearchViewController.m */; };
+		96038409126CADA900BEC8F3 /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96038408126CADA900BEC8F3 /* DirectionsViewController.m */; };
+		96067DCD1294D1BA00FF1FDF /* RouteEndAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96067DCC1294D1BA00FF1FDF /* RouteEndAnnotation.m */; };
+		9606808D1296234900FF1FDF /* ScenicRoute.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 9606808C1296234900FF1FDF /* ScenicRoute.xcdatamodel */; };
+		9609C7B412AE0DE600763E12 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9609C7AA12AE0DE600763E12 /* NSObject+SBJSON.m */; };
+		9609C7B512AE0DE600763E12 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9609C7AC12AE0DE600763E12 /* NSString+SBJSON.m */; };
+		9609C7B612AE0DE600763E12 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9609C7AE12AE0DE600763E12 /* SBJsonParser.m */; };
+		9609C7B712AE0DE600763E12 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9609C7B012AE0DE600763E12 /* SBJsonStreamWriter.m */; };
+		9609C7B812AE0DE600763E12 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9609C7B212AE0DE600763E12 /* SBJsonWriter.m */; };
+		9620ED2012C3EFC10068AE71 /* hwy-walkley-vanier.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9620ED0B12C3EF0A0068AE71 /* hwy-walkley-vanier.xml */; };
+		96210C4A127FB1BE00943D10 /* BaseAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96210C49127FB1BE00943D10 /* BaseAnnotation.m */; };
+		96210C55127FB4C100943D10 /* DetourOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 96210C54127FB4C100943D10 /* DetourOverlay.m */; };
+		963ABB7312B7A2F40016185E /* HighwayDetour.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABB6E12B7A2F40016185E /* HighwayDetour.m */; };
+		963ABB7412B7A2F40016185E /* HighwayDetourPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABB7012B7A2F40016185E /* HighwayDetourPoint.m */; };
+		963ABC3312B7A8BB0016185E /* Highway.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC1F12B7A8BB0016185E /* Highway.m */; };
+		963ABC3512B7A8BB0016185E /* HighwayDetour+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2312B7A8BB0016185E /* HighwayDetour+Utility.m */; };
+		963ABC3712B7A8BB0016185E /* HighwayDetourStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2712B7A8BB0016185E /* HighwayDetourStep.m */; };
+		963ABC3812B7A8BB0016185E /* HighwayRamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2912B7A8BB0016185E /* HighwayRamp.m */; };
+		963ABC3912B7A8BB0016185E /* HighwayRamp+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2B12B7A8BB0016185E /* HighwayRamp+Utility.m */; };
+		963ABC4B12B7A9600016185E /* HighwayRampRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC4912B7A9600016185E /* HighwayRampRect.m */; };
+		963ABCCD12B7AABF0016185E /* HighwayRampRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC4912B7A9600016185E /* HighwayRampRect.m */; };
+		963ABCCE12B7AAC00016185E /* HighwayRamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2912B7A8BB0016185E /* HighwayRamp.m */; };
+		963ABCCF12B7AAC10016185E /* HighwayRamp+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2B12B7A8BB0016185E /* HighwayRamp+Utility.m */; };
+		963ABCD012B7AAC20016185E /* HighwayDetourStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2712B7A8BB0016185E /* HighwayDetourStep.m */; };
+		963ABCD112B7AAC30016185E /* HighwayDetourPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2512B7A8BB0016185E /* HighwayDetourPoint.m */; };
+		963ABCD212B7AAC30016185E /* HighwayDetour.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2112B7A8BB0016185E /* HighwayDetour.m */; };
+		963ABCD312B7AAC40016185E /* HighwayDetour+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC2312B7A8BB0016185E /* HighwayDetour+Utility.m */; };
+		963ABCD412B7AAC50016185E /* Highway.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABC1F12B7A8BB0016185E /* Highway.m */; };
+		963ABCD712B7AAD70016185E /* HighwayDetourLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C325BA12B2CE3E001AA1D3 /* HighwayDetourLoader.m */; };
+		963ABCD812B7AAE70016185E /* HighwayRampLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 963BB74612AF3350001CFDD0 /* HighwayRampLoader.m */; };
+		963BB61712AE88C7001CFDD0 /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 963BB61612AE88C7001CFDD0 /* AppData.m */; };
+		963BB65E12AE93CC001CFDD0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55163F7A12877347009D5098 /* CoreData.framework */; };
+		963BB65F12AE93D2001CFDD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		963BB66412AE93DD001CFDD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		963BB66D12AE93EA001CFDD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		963BB68712AE9527001CFDD0 /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 963BB61612AE88C7001CFDD0 /* AppData.m */; };
+		963BB6C012AE9AE6001CFDD0 /* HighwayRamps.json in Resources */ = {isa = PBXBuildFile; fileRef = 9609C7DE12AE0F6F00763E12 /* HighwayRamps.json */; };
+		963BB73712AF32E1001CFDD0 /* ScenicRoute.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 9606808C1296234900FF1FDF /* ScenicRoute.xcdatamodel */; };
+		964B0BEA126FF23400890400 /* MapViewBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B0BE9126FF23400890400 /* MapViewBaseViewController.m */; };
+		965C4A7012B1058400B55144 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		965C4A7D12B105DF00B55144 /* DataUtilityAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C4A7C12B105DF00B55144 /* DataUtilityAppDelegate.m */; };
+		965C4AE612B1096E00B55144 /* DataUtility.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965C4AE512B1096E00B55144 /* DataUtility.xib */; };
+		965C4B0A12B10C3800B55144 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960383DB126C698B00BEC8F3 /* MapKit.framework */; };
+		965C4B1312B10CA800B55144 /* OperationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C4B1212B10CA800B55144 /* OperationsViewController.m */; };
+		965C4B1612B10CDE00B55144 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 965C4B1512B10CDE00B55144 /* DataViewController.m */; };
+		9667D91C12B81B8B007C7FE9 /* HighwayDetourRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667D91B12B81B8B007C7FE9 /* HighwayDetourRouter.m */; };
+		9667D95D12B87274007C7FE9 /* HighwayNamedExit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667D95C12B87274007C7FE9 /* HighwayNamedExit.m */; };
+		9672EEA2128C96EC004256E1 /* gDirectionsResponse.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9672EEA1128C96EC004256E1 /* gDirectionsResponse.xml */; };
+		967C979B12BB210800F76DDB /* metadata.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 967C979A12BB210800F76DDB /* metadata.sqlite */; };
+		967C979E12BB26F600F76DDB /* HighwayExitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 967C979D12BB26F600F76DDB /* HighwayExitAnnotation.m */; };
+		967C993D12BBE38F00F76DDB /* gDirectionsResponse.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9672EEA1128C96EC004256E1 /* gDirectionsResponse.xml */; };
+		967C996212BBE60300F76DDB /* HighwayNamedExit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9667D95C12B87274007C7FE9 /* HighwayNamedExit.m */; };
+		967C9AE812BC6DA000F76DDB /* hwy-walkley-split.xml in Resources */ = {isa = PBXBuildFile; fileRef = 967C9AE712BC6DA000F76DDB /* hwy-walkley-split.xml */; };
+		967C9B5F12BC7EF500F76DDB /* HighwayRedZoneOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 967C9B5E12BC7EF500F76DDB /* HighwayRedZoneOverlay.m */; };
+		967CA75512C1CE4C00F76DDB /* BasicRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 967CA75412C1CE4C00F76DDB /* BasicRoute.m */; };
+		967CA79812C2246300F76DDB /* RouteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 967CA79712C2246300F76DDB /* RouteRequest.m */; };
+		967D915112C2F73E00B0CF6F /* GenericParserErrorAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 967D915012C2F73E00B0CF6F /* GenericParserErrorAlert.m */; };
+		967D919312C2FA7D00B0CF6F /* GenericParserErrorAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 967D915012C2F73E00B0CF6F /* GenericParserErrorAlert.m */; };
+		968626B612C46C29009D11FA /* app57.png in Resources */ = {isa = PBXBuildFile; fileRef = 968626B312C46C29009D11FA /* app57.png */; };
+		968626B712C46C29009D11FA /* app114.png in Resources */ = {isa = PBXBuildFile; fileRef = 968626B412C46C29009D11FA /* app114.png */; };
+		968626B812C46C29009D11FA /* app512.png in Resources */ = {isa = PBXBuildFile; fileRef = 968626B512C46C29009D11FA /* app512.png */; };
+		96A05907128A3ECE00A37639 /* GoogleDirectionsDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A05906128A3ECE00A37639 /* GoogleDirectionsDataParser.m */; };
+		96A05963128A4C0A00A37639 /* GoogleRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A05962128A4C0A00A37639 /* GoogleRoute.m */; };
+		96A05966128A4C2100A37639 /* GoogleRouteStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A05965128A4C2100A37639 /* GoogleRouteStep.m */; };
+		96A05969128A4CB700A37639 /* GoogleRouteLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A05968128A4CB700A37639 /* GoogleRouteLeg.m */; };
+		96F800B812B478F300BE70AE /* GoogleDirectionsDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A05906128A3ECE00A37639 /* GoogleDirectionsDataParser.m */; };
+		96F800BB12B4790F00BE70AE /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F720012AB1C29002A4114 /* DataParser.m */; };
+		96F800BC12B4791100BE70AE /* GoogleDataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 552F720712AB1C29002A4114 /* GoogleDataParser.m */; };
+		96F800BF12B4792500BE70AE /* GoogleRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A05962128A4C0A00A37639 /* GoogleRoute.m */; };
+		96F800C012B4792600BE70AE /* GoogleRouteLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A05968128A4CB700A37639 /* GoogleRouteLeg.m */; };
+		96F800C112B4792700BE70AE /* GoogleRouteStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A05965128A4C2100A37639 /* GoogleRouteStep.m */; };
+		96F800DB12B4793C00BE70AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960383DF126C699500BEC8F3 /* CoreLocation.framework */; };
+		96F8ED8812C79E570082252A /* WaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8ED8712C79E570082252A /* WaitView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* ScenicRouteAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenicRouteAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* ScenicRouteAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScenicRouteAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* ScenicRoute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenicRoute.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* ScenicRoute_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenicRoute_Prefix.pch; sourceTree = "<group>"; };
+		55163F7A12877347009D5098 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5516A6DF12C46A5A0007D885 /* destination-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "destination-bg.png"; path = "Resources/destination-bg.png"; sourceTree = "<group>"; };
+		5516A6EC12C470FB0007D885 /* swap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swap.png; path = Resources/swap.png; sourceTree = "<group>"; };
+		5516A71F12C477060007D885 /* gps-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gps-arrow.png"; path = "Resources/gps-arrow.png"; sourceTree = "<group>"; };
+		552F71FA12AB1BA8002A4114 /* POIAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIAnnotation.m; path = Annotations/POIAnnotation.m; sourceTree = "<group>"; };
+		552F71FB12AB1BA8002A4114 /* POIAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIAnnotation.h; path = Annotations/POIAnnotation.h; sourceTree = "<group>"; };
+		552F71FF12AB1C29002A4114 /* YellowPagesDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YellowPagesDataParser.m; path = Network/Parsers/YellowPagesDataParser.m; sourceTree = "<group>"; };
+		552F720012AB1C29002A4114 /* DataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataParser.m; path = Network/Parsers/DataParser.m; sourceTree = "<group>"; };
+		552F720112AB1C29002A4114 /* DataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataParser.h; path = Network/Parsers/DataParser.h; sourceTree = "<group>"; };
+		552F720212AB1C29002A4114 /* DataParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataParserDelegate.h; path = Network/Parsers/DataParserDelegate.h; sourceTree = "<group>"; };
+		552F720312AB1C29002A4114 /* GoogleDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleDataParser.h; path = Network/Parsers/GoogleDataParser.h; sourceTree = "<group>"; };
+		552F720412AB1C29002A4114 /* CanPagesDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CanPagesDataParser.m; path = Network/Parsers/CanPagesDataParser.m; sourceTree = "<group>"; };
+		552F720512AB1C29002A4114 /* YellowPagesDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YellowPagesDataParser.h; path = Network/Parsers/YellowPagesDataParser.h; sourceTree = "<group>"; };
+		552F720612AB1C29002A4114 /* CanPagesDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CanPagesDataParser.h; path = Network/Parsers/CanPagesDataParser.h; sourceTree = "<group>"; };
+		552F720712AB1C29002A4114 /* GoogleDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleDataParser.m; path = Network/Parsers/GoogleDataParser.m; sourceTree = "<group>"; };
+		5565EE0A12D57858003E881B /* yp_badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yp_badge.png; path = Resources/yp_badge.png; sourceTree = "<group>"; };
+		55A0671412B7381A00C316DD /* AnnotationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AnnotationViewController.xib; path = Classes/Controllers/AnnotationViewController.xib; sourceTree = "<group>"; };
+		55A0671512B7381A00C316DD /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnnotationViewController.m; path = Controllers/AnnotationViewController.m; sourceTree = "<group>"; };
+		55A0671612B7381A00C316DD /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnnotationViewController.h; path = Controllers/AnnotationViewController.h; sourceTree = "<group>"; };
+		55AC50A112BD78F3005B61C0 /* yp_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yp_icon.png; path = Resources/yp_icon.png; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* ScenicRoute-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ScenicRoute-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		960383DB126C698B00BEC8F3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		960383DF126C699500BEC8F3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		960383E8126C69F700BEC8F3 /* MapStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapStateViewController.h; path = Controllers/MapStateViewController.h; sourceTree = "<group>"; };
+		960383E9126C69F700BEC8F3 /* MapStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapStateViewController.m; path = Controllers/MapStateViewController.m; sourceTree = "<group>"; };
+		960383EB126C6BEA00BEC8F3 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = Controllers/SearchViewController.h; sourceTree = "<group>"; };
+		960383EC126C6BEA00BEC8F3 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = Controllers/SearchViewController.m; sourceTree = "<group>"; };
+		96038407126CADA900BEC8F3 /* DirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsViewController.h; path = Controllers/DirectionsViewController.h; sourceTree = "<group>"; };
+		96038408126CADA900BEC8F3 /* DirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsViewController.m; path = Controllers/DirectionsViewController.m; sourceTree = "<group>"; };
+		96067DCB1294D1BA00FF1FDF /* RouteEndAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteEndAnnotation.h; path = Annotations/RouteEndAnnotation.h; sourceTree = "<group>"; };
+		96067DCC1294D1BA00FF1FDF /* RouteEndAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteEndAnnotation.m; path = Annotations/RouteEndAnnotation.m; sourceTree = "<group>"; };
+		9606808C1296234900FF1FDF /* ScenicRoute.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = ScenicRoute.xcdatamodel; path = Data/Managed/ScenicRoute.xcdatamodel; sourceTree = "<group>"; };
+		9609C73D12AE065E00763E12 /* DataUtility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataUtility.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9609C73F12AE065E00763E12 /* DataUtility-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DataUtility-Info.plist"; sourceTree = "<group>"; };
+		9609C7A812AE0DE600763E12 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		9609C7A912AE0DE600763E12 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		9609C7AA12AE0DE600763E12 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		9609C7AB12AE0DE600763E12 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		9609C7AC12AE0DE600763E12 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		9609C7AD12AE0DE600763E12 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		9609C7AE12AE0DE600763E12 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		9609C7AF12AE0DE600763E12 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		9609C7B012AE0DE600763E12 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		9609C7B112AE0DE600763E12 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		9609C7B212AE0DE600763E12 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		9609C7B312AE0DE600763E12 /* SBProxyForJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBProxyForJson.h; sourceTree = "<group>"; };
+		9609C7DE12AE0F6F00763E12 /* HighwayRamps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HighwayRamps.json; path = Resources/HighwayRamps.json; sourceTree = "<group>"; };
+		9620ED0B12C3EF0A0068AE71 /* hwy-walkley-vanier.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "hwy-walkley-vanier.xml"; path = "Resources/Sample Routes/hwy-walkley-vanier.xml"; sourceTree = "<group>"; };
+		96210C48127FB1BE00943D10 /* BaseAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseAnnotation.h; path = Annotations/BaseAnnotation.h; sourceTree = "<group>"; };
+		96210C49127FB1BE00943D10 /* BaseAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseAnnotation.m; path = Annotations/BaseAnnotation.m; sourceTree = "<group>"; };
+		96210C53127FB4C100943D10 /* DetourOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetourOverlay.h; path = Annotations/DetourOverlay.h; sourceTree = "<group>"; };
+		96210C54127FB4C100943D10 /* DetourOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetourOverlay.m; path = Annotations/DetourOverlay.m; sourceTree = "<group>"; };
+		963ABB6D12B7A2F40016185E /* HighwayDetour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayDetour.h; path = Data/Managed/HighwayDetour.h; sourceTree = "<group>"; };
+		963ABB6E12B7A2F40016185E /* HighwayDetour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayDetour.m; path = Data/Managed/HighwayDetour.m; sourceTree = "<group>"; };
+		963ABB6F12B7A2F40016185E /* HighwayDetourPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayDetourPoint.h; path = Data/Managed/HighwayDetourPoint.h; sourceTree = "<group>"; };
+		963ABB7012B7A2F40016185E /* HighwayDetourPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayDetourPoint.m; path = Data/Managed/HighwayDetourPoint.m; sourceTree = "<group>"; };
+		963ABC1E12B7A8BB0016185E /* Highway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Highway.h; path = Data/Managed/Highway.h; sourceTree = "<group>"; };
+		963ABC1F12B7A8BB0016185E /* Highway.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Highway.m; path = Data/Managed/Highway.m; sourceTree = "<group>"; };
+		963ABC2012B7A8BB0016185E /* HighwayDetour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayDetour.h; path = Data/Managed/HighwayDetour.h; sourceTree = "<group>"; };
+		963ABC2112B7A8BB0016185E /* HighwayDetour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayDetour.m; path = Data/Managed/HighwayDetour.m; sourceTree = "<group>"; };
+		963ABC2212B7A8BB0016185E /* HighwayDetour+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HighwayDetour+Utility.h"; path = "Data/Managed/HighwayDetour+Utility.h"; sourceTree = "<group>"; };
+		963ABC2312B7A8BB0016185E /* HighwayDetour+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HighwayDetour+Utility.m"; path = "Data/Managed/HighwayDetour+Utility.m"; sourceTree = "<group>"; };
+		963ABC2412B7A8BB0016185E /* HighwayDetourPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayDetourPoint.h; path = Data/Managed/HighwayDetourPoint.h; sourceTree = "<group>"; };
+		963ABC2512B7A8BB0016185E /* HighwayDetourPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayDetourPoint.m; path = Data/Managed/HighwayDetourPoint.m; sourceTree = "<group>"; };
+		963ABC2612B7A8BB0016185E /* HighwayDetourStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayDetourStep.h; path = Data/Managed/HighwayDetourStep.h; sourceTree = "<group>"; };
+		963ABC2712B7A8BB0016185E /* HighwayDetourStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayDetourStep.m; path = Data/Managed/HighwayDetourStep.m; sourceTree = "<group>"; };
+		963ABC2812B7A8BB0016185E /* HighwayRamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayRamp.h; path = Data/Managed/HighwayRamp.h; sourceTree = "<group>"; };
+		963ABC2912B7A8BB0016185E /* HighwayRamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayRamp.m; path = Data/Managed/HighwayRamp.m; sourceTree = "<group>"; };
+		963ABC2A12B7A8BB0016185E /* HighwayRamp+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HighwayRamp+Utility.h"; path = "Data/Managed/HighwayRamp+Utility.h"; sourceTree = "<group>"; };
+		963ABC2B12B7A8BB0016185E /* HighwayRamp+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HighwayRamp+Utility.m"; path = "Data/Managed/HighwayRamp+Utility.m"; sourceTree = "<group>"; };
+		963ABC4812B7A9600016185E /* HighwayRampRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayRampRect.h; path = Data/Managed/HighwayRampRect.h; sourceTree = "<group>"; };
+		963ABC4912B7A9600016185E /* HighwayRampRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayRampRect.m; path = Data/Managed/HighwayRampRect.m; sourceTree = "<group>"; };
+		963BB61512AE88C7001CFDD0 /* AppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
+		963BB61612AE88C7001CFDD0 /* AppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppData.m; sourceTree = "<group>"; };
+		963BB74512AF3350001CFDD0 /* HighwayRampLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayRampLoader.h; path = Data/Utility/HighwayRampLoader.h; sourceTree = "<group>"; };
+		963BB74612AF3350001CFDD0 /* HighwayRampLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayRampLoader.m; path = Data/Utility/HighwayRampLoader.m; sourceTree = "<group>"; };
+		964B0BE8126FF23400890400 /* MapViewBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewBaseViewController.h; path = Controllers/MapViewBaseViewController.h; sourceTree = "<group>"; };
+		964B0BE9126FF23400890400 /* MapViewBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewBaseViewController.m; path = Controllers/MapViewBaseViewController.m; sourceTree = "<group>"; };
+		965C4A7B12B105DF00B55144 /* DataUtilityAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtilityAppDelegate.h; sourceTree = "<group>"; };
+		965C4A7C12B105DF00B55144 /* DataUtilityAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataUtilityAppDelegate.m; sourceTree = "<group>"; };
+		965C4AE512B1096E00B55144 /* DataUtility.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DataUtility.xib; path = Resources/DataUtility.xib; sourceTree = "<group>"; };
+		965C4B1112B10CA800B55144 /* OperationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationsViewController.h; path = Data/Utility/OperationsViewController.h; sourceTree = "<group>"; };
+		965C4B1212B10CA800B55144 /* OperationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OperationsViewController.m; path = Data/Utility/OperationsViewController.m; sourceTree = "<group>"; };
+		965C4B1412B10CDE00B55144 /* DataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataViewController.h; path = Data/Utility/DataViewController.h; sourceTree = "<group>"; };
+		965C4B1512B10CDE00B55144 /* DataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataViewController.m; path = Data/Utility/DataViewController.m; sourceTree = "<group>"; };
+		9667D91A12B81B8B007C7FE9 /* HighwayDetourRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayDetourRouter.h; path = Routing/HighwayDetourRouter.h; sourceTree = "<group>"; };
+		9667D91B12B81B8B007C7FE9 /* HighwayDetourRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayDetourRouter.m; path = Routing/HighwayDetourRouter.m; sourceTree = "<group>"; };
+		9667D95B12B87274007C7FE9 /* HighwayNamedExit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayNamedExit.h; path = Data/Managed/HighwayNamedExit.h; sourceTree = "<group>"; };
+		9667D95C12B87274007C7FE9 /* HighwayNamedExit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayNamedExit.m; path = Data/Managed/HighwayNamedExit.m; sourceTree = "<group>"; };
+		9672EEA1128C96EC004256E1 /* gDirectionsResponse.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = gDirectionsResponse.xml; path = Resources/gDirectionsResponse.xml; sourceTree = "<group>"; };
+		967C979A12BB210800F76DDB /* metadata.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = metadata.sqlite; path = Resources/metadata.sqlite; sourceTree = "<group>"; };
+		967C979C12BB26F600F76DDB /* HighwayExitAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayExitAnnotation.h; path = Annotations/HighwayExitAnnotation.h; sourceTree = "<group>"; };
+		967C979D12BB26F600F76DDB /* HighwayExitAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayExitAnnotation.m; path = Annotations/HighwayExitAnnotation.m; sourceTree = "<group>"; };
+		967C9AE712BC6DA000F76DDB /* hwy-walkley-split.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "hwy-walkley-split.xml"; path = "Resources/Sample Routes/hwy-walkley-split.xml"; sourceTree = "<group>"; };
+		967C9B5D12BC7EF500F76DDB /* HighwayRedZoneOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayRedZoneOverlay.h; path = Annotations/HighwayRedZoneOverlay.h; sourceTree = "<group>"; };
+		967C9B5E12BC7EF500F76DDB /* HighwayRedZoneOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayRedZoneOverlay.m; path = Annotations/HighwayRedZoneOverlay.m; sourceTree = "<group>"; };
+		967CA75212C1CD4800F76DDB /* RouterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouterDelegate.h; path = Routing/RouterDelegate.h; sourceTree = "<group>"; };
+		967CA75312C1CE4C00F76DDB /* BasicRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicRoute.h; path = Data/BasicRoute.h; sourceTree = "<group>"; };
+		967CA75412C1CE4C00F76DDB /* BasicRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicRoute.m; path = Data/BasicRoute.m; sourceTree = "<group>"; };
+		967CA79612C2246300F76DDB /* RouteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteRequest.h; path = Routing/RouteRequest.h; sourceTree = "<group>"; };
+		967CA79712C2246300F76DDB /* RouteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteRequest.m; path = Routing/RouteRequest.m; sourceTree = "<group>"; };
+		967D914F12C2F73E00B0CF6F /* GenericParserErrorAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericParserErrorAlert.h; path = Network/Parsers/GenericParserErrorAlert.h; sourceTree = "<group>"; };
+		967D915012C2F73E00B0CF6F /* GenericParserErrorAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericParserErrorAlert.m; path = Network/Parsers/GenericParserErrorAlert.m; sourceTree = "<group>"; };
+		968626B312C46C29009D11FA /* app57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app57.png; path = Resources/app57.png; sourceTree = "<group>"; };
+		968626B412C46C29009D11FA /* app114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app114.png; path = Resources/app114.png; sourceTree = "<group>"; };
+		968626B512C46C29009D11FA /* app512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = app512.png; path = Resources/app512.png; sourceTree = "<group>"; };
+		96A05905128A3ECE00A37639 /* GoogleDirectionsDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleDirectionsDataParser.h; path = Network/Parsers/GoogleDirectionsDataParser.h; sourceTree = "<group>"; };
+		96A05906128A3ECE00A37639 /* GoogleDirectionsDataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleDirectionsDataParser.m; path = Network/Parsers/GoogleDirectionsDataParser.m; sourceTree = "<group>"; };
+		96A05961128A4C0A00A37639 /* GoogleRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleRoute.h; path = Data/GoogleRoute.h; sourceTree = "<group>"; };
+		96A05962128A4C0A00A37639 /* GoogleRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleRoute.m; path = Data/GoogleRoute.m; sourceTree = "<group>"; };
+		96A05964128A4C2100A37639 /* GoogleRouteStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleRouteStep.h; path = Data/GoogleRouteStep.h; sourceTree = "<group>"; };
+		96A05965128A4C2100A37639 /* GoogleRouteStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleRouteStep.m; path = Data/GoogleRouteStep.m; sourceTree = "<group>"; };
+		96A05967128A4CB700A37639 /* GoogleRouteLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleRouteLeg.h; path = Data/GoogleRouteLeg.h; sourceTree = "<group>"; };
+		96A05968128A4CB700A37639 /* GoogleRouteLeg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleRouteLeg.m; path = Data/GoogleRouteLeg.m; sourceTree = "<group>"; };
+		96C325B912B2CE3E001AA1D3 /* HighwayDetourLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighwayDetourLoader.h; path = Data/Utility/HighwayDetourLoader.h; sourceTree = "<group>"; };
+		96C325BA12B2CE3E001AA1D3 /* HighwayDetourLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighwayDetourLoader.m; path = Data/Utility/HighwayDetourLoader.m; sourceTree = "<group>"; };
+		96F8ED8612C79E570082252A /* WaitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaitView.h; path = Views/WaitView.h; sourceTree = "<group>"; };
+		96F8ED8712C79E570082252A /* WaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaitView.m; path = Views/WaitView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				960383DC126C698B00BEC8F3 /* MapKit.framework in Frameworks */,
+				960383E0126C699500BEC8F3 /* CoreLocation.framework in Frameworks */,
+				55163F7B12877347009D5098 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9609C73B12AE065E00763E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963BB65E12AE93CC001CFDD0 /* CoreData.framework in Frameworks */,
+				963BB65F12AE93D2001CFDD0 /* Foundation.framework in Frameworks */,
+				963BB66412AE93DD001CFDD0 /* UIKit.framework in Frameworks */,
+				963BB66D12AE93EA001CFDD0 /* CoreGraphics.framework in Frameworks */,
+				965C4B0A12B10C3800B55144 /* MapKit.framework in Frameworks */,
+				96F800DB12B4793C00BE70AE /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				96F8ED8512C79E460082252A /* Views */,
+				96210C0C127FA5F000943D10 /* Annotations */,
+				960383DA126C696800BEC8F3 /* Data */,
+				960383D9126C696200BEC8F3 /* Network */,
+				9667D91912B81B4D007C7FE9 /* Routing */,
+				960383D6126C695A00BEC8F3 /* Controllers */,
+				1D3623240D0F684500981E51 /* ScenicRouteAppDelegate.h */,
+				1D3623250D0F684500981E51 /* ScenicRouteAppDelegate.m */,
+				963BB61512AE88C7001CFDD0 /* AppData.h */,
+				963BB61612AE88C7001CFDD0 /* AppData.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* ScenicRoute.app */,
+				9609C73D12AE065E00763E12 /* DataUtility.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				9609C79F12AE0D7200763E12 /* lib */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* ScenicRoute_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5565EE0A12D57858003E881B /* yp_badge.png */,
+				5516A71F12C477060007D885 /* gps-arrow.png */,
+				5516A6EC12C470FB0007D885 /* swap.png */,
+				5516A6DF12C46A5A0007D885 /* destination-bg.png */,
+				968626B212C46C19009D11FA /* App Icon */,
+				967C9AE312BC6C9E00F76DDB /* Sample Routes */,
+				55AC50A112BD78F3005B61C0 /* yp_icon.png */,
+				55A0671412B7381A00C316DD /* AnnotationViewController.xib */,
+				9672EEA1128C96EC004256E1 /* gDirectionsResponse.xml */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* ScenicRoute-Info.plist */,
+				9609C73F12AE065E00763E12 /* DataUtility-Info.plist */,
+				9609C7DE12AE0F6F00763E12 /* HighwayRamps.json */,
+				965C4AE512B1096E00B55144 /* DataUtility.xib */,
+				967C979A12BB210800F76DDB /* metadata.sqlite */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				960383DB126C698B00BEC8F3 /* MapKit.framework */,
+				960383DF126C699500BEC8F3 /* CoreLocation.framework */,
+				55163F7A12877347009D5098 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55CA42FB12715E7700C3E07B /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				967D914F12C2F73E00B0CF6F /* GenericParserErrorAlert.h */,
+				967D915012C2F73E00B0CF6F /* GenericParserErrorAlert.m */,
+				963ABB6D12B7A2F40016185E /* HighwayDetour.h */,
+				963ABB6E12B7A2F40016185E /* HighwayDetour.m */,
+				963ABB6F12B7A2F40016185E /* HighwayDetourPoint.h */,
+				963ABB7012B7A2F40016185E /* HighwayDetourPoint.m */,
+				552F720112AB1C29002A4114 /* DataParser.h */,
+				552F720012AB1C29002A4114 /* DataParser.m */,
+				552F720212AB1C29002A4114 /* DataParserDelegate.h */,
+				552F720312AB1C29002A4114 /* GoogleDataParser.h */,
+				552F720512AB1C29002A4114 /* YellowPagesDataParser.h */,
+				552F71FF12AB1C29002A4114 /* YellowPagesDataParser.m */,
+				552F720612AB1C29002A4114 /* CanPagesDataParser.h */,
+				552F720412AB1C29002A4114 /* CanPagesDataParser.m */,
+				552F720712AB1C29002A4114 /* GoogleDataParser.m */,
+				96A05905128A3ECE00A37639 /* GoogleDirectionsDataParser.h */,
+				96A05906128A3ECE00A37639 /* GoogleDirectionsDataParser.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		960383D6126C695A00BEC8F3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				55A0671612B7381A00C316DD /* AnnotationViewController.h */,
+				55A0671512B7381A00C316DD /* AnnotationViewController.m */,
+				960383E8126C69F700BEC8F3 /* MapStateViewController.h */,
+				960383E9126C69F700BEC8F3 /* MapStateViewController.m */,
+				964B0BE8126FF23400890400 /* MapViewBaseViewController.h */,
+				964B0BE9126FF23400890400 /* MapViewBaseViewController.m */,
+				960383EB126C6BEA00BEC8F3 /* SearchViewController.h */,
+				960383EC126C6BEA00BEC8F3 /* SearchViewController.m */,
+				96038407126CADA900BEC8F3 /* DirectionsViewController.h */,
+				96038408126CADA900BEC8F3 /* DirectionsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		960383D9126C696200BEC8F3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				55CA42FB12715E7700C3E07B /* Parsers */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		960383DA126C696800BEC8F3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9609C74312AE069E00763E12 /* Utility */,
+				960680671296191300FF1FDF /* Managed */,
+				967CA75312C1CE4C00F76DDB /* BasicRoute.h */,
+				967CA75412C1CE4C00F76DDB /* BasicRoute.m */,
+				96A05961128A4C0A00A37639 /* GoogleRoute.h */,
+				96A05962128A4C0A00A37639 /* GoogleRoute.m */,
+				96A05964128A4C2100A37639 /* GoogleRouteStep.h */,
+				96A05965128A4C2100A37639 /* GoogleRouteStep.m */,
+				96A05967128A4CB700A37639 /* GoogleRouteLeg.h */,
+				96A05968128A4CB700A37639 /* GoogleRouteLeg.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		960680671296191300FF1FDF /* Managed */ = {
+			isa = PBXGroup;
+			children = (
+				9667D95B12B87274007C7FE9 /* HighwayNamedExit.h */,
+				9667D95C12B87274007C7FE9 /* HighwayNamedExit.m */,
+				963ABC1E12B7A8BB0016185E /* Highway.h */,
+				963ABC1F12B7A8BB0016185E /* Highway.m */,
+				963ABC2012B7A8BB0016185E /* HighwayDetour.h */,
+				963ABC2112B7A8BB0016185E /* HighwayDetour.m */,
+				963ABC2212B7A8BB0016185E /* HighwayDetour+Utility.h */,
+				963ABC2312B7A8BB0016185E /* HighwayDetour+Utility.m */,
+				963ABC2412B7A8BB0016185E /* HighwayDetourPoint.h */,
+				963ABC2512B7A8BB0016185E /* HighwayDetourPoint.m */,
+				963ABC2612B7A8BB0016185E /* HighwayDetourStep.h */,
+				963ABC2712B7A8BB0016185E /* HighwayDetourStep.m */,
+				963ABC2812B7A8BB0016185E /* HighwayRamp.h */,
+				963ABC2912B7A8BB0016185E /* HighwayRamp.m */,
+				963ABC4812B7A9600016185E /* HighwayRampRect.h */,
+				963ABC4912B7A9600016185E /* HighwayRampRect.m */,
+				963ABC2A12B7A8BB0016185E /* HighwayRamp+Utility.h */,
+				963ABC2B12B7A8BB0016185E /* HighwayRamp+Utility.m */,
+				9606808C1296234900FF1FDF /* ScenicRoute.xcdatamodel */,
+			);
+			name = Managed;
+			sourceTree = "<group>";
+		};
+		9609C74312AE069E00763E12 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				965C4A7B12B105DF00B55144 /* DataUtilityAppDelegate.h */,
+				965C4A7C12B105DF00B55144 /* DataUtilityAppDelegate.m */,
+				965C4B1112B10CA800B55144 /* OperationsViewController.h */,
+				965C4B1212B10CA800B55144 /* OperationsViewController.m */,
+				965C4B1412B10CDE00B55144 /* DataViewController.h */,
+				965C4B1512B10CDE00B55144 /* DataViewController.m */,
+				963BB74512AF3350001CFDD0 /* HighwayRampLoader.h */,
+				963BB74612AF3350001CFDD0 /* HighwayRampLoader.m */,
+				96C325B912B2CE3E001AA1D3 /* HighwayDetourLoader.h */,
+				96C325BA12B2CE3E001AA1D3 /* HighwayDetourLoader.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		9609C79F12AE0D7200763E12 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9609C7A712AE0DE600763E12 /* json-framework */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		9609C7A712AE0DE600763E12 /* json-framework */ = {
+			isa = PBXGroup;
+			children = (
+				9609C7A812AE0DE600763E12 /* JSON.h */,
+				9609C7A912AE0DE600763E12 /* NSObject+SBJSON.h */,
+				9609C7AA12AE0DE600763E12 /* NSObject+SBJSON.m */,
+				9609C7AB12AE0DE600763E12 /* NSString+SBJSON.h */,
+				9609C7AC12AE0DE600763E12 /* NSString+SBJSON.m */,
+				9609C7AD12AE0DE600763E12 /* SBJsonParser.h */,
+				9609C7AE12AE0DE600763E12 /* SBJsonParser.m */,
+				9609C7AF12AE0DE600763E12 /* SBJsonStreamWriter.h */,
+				9609C7B012AE0DE600763E12 /* SBJsonStreamWriter.m */,
+				9609C7B112AE0DE600763E12 /* SBJsonWriter.h */,
+				9609C7B212AE0DE600763E12 /* SBJsonWriter.m */,
+				9609C7B312AE0DE600763E12 /* SBProxyForJson.h */,
+			);
+			name = "json-framework";
+			path = "lib/json-framework";
+			sourceTree = "<group>";
+		};
+		96210C0C127FA5F000943D10 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				96210C48127FB1BE00943D10 /* BaseAnnotation.h */,
+				96210C49127FB1BE00943D10 /* BaseAnnotation.m */,
+				96210C53127FB4C100943D10 /* DetourOverlay.h */,
+				96210C54127FB4C100943D10 /* DetourOverlay.m */,
+				552F71FB12AB1BA8002A4114 /* POIAnnotation.h */,
+				552F71FA12AB1BA8002A4114 /* POIAnnotation.m */,
+				96067DCB1294D1BA00FF1FDF /* RouteEndAnnotation.h */,
+				96067DCC1294D1BA00FF1FDF /* RouteEndAnnotation.m */,
+				967C979C12BB26F600F76DDB /* HighwayExitAnnotation.h */,
+				967C979D12BB26F600F76DDB /* HighwayExitAnnotation.m */,
+				967C9B5D12BC7EF500F76DDB /* HighwayRedZoneOverlay.h */,
+				967C9B5E12BC7EF500F76DDB /* HighwayRedZoneOverlay.m */,
+			);
+			name = Annotations;
+			sourceTree = "<group>";
+		};
+		9667D91912B81B4D007C7FE9 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				967CA79612C2246300F76DDB /* RouteRequest.h */,
+				967CA79712C2246300F76DDB /* RouteRequest.m */,
+				967CA75212C1CD4800F76DDB /* RouterDelegate.h */,
+				9667D91A12B81B8B007C7FE9 /* HighwayDetourRouter.h */,
+				9667D91B12B81B8B007C7FE9 /* HighwayDetourRouter.m */,
+			);
+			name = Routing;
+			sourceTree = "<group>";
+		};
+		967C9AE312BC6C9E00F76DDB /* Sample Routes */ = {
+			isa = PBXGroup;
+			children = (
+				9672EEA1128C96EC004256E1 /* gDirectionsResponse.xml */,
+				967C9AE712BC6DA000F76DDB /* hwy-walkley-split.xml */,
+				9620ED0B12C3EF0A0068AE71 /* hwy-walkley-vanier.xml */,
+			);
+			name = "Sample Routes";
+			sourceTree = "<group>";
+		};
+		968626B212C46C19009D11FA /* App Icon */ = {
+			isa = PBXGroup;
+			children = (
+				968626B312C46C29009D11FA /* app57.png */,
+				968626B412C46C29009D11FA /* app114.png */,
+				968626B512C46C29009D11FA /* app512.png */,
+			);
+			name = "App Icon";
+			sourceTree = "<group>";
+		};
+		96F8ED8512C79E460082252A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96F8ED8612C79E570082252A /* WaitView.h */,
+				96F8ED8712C79E570082252A /* WaitView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* ScenicRoute */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ScenicRoute" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScenicRoute;
+			productName = ScenicRoute;
+			productReference = 1D6058910D05DD3D006BFB54 /* ScenicRoute.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9609C73C12AE065E00763E12 /* DataUtility */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9609C74212AE065F00763E12 /* Build configuration list for PBXNativeTarget "DataUtility" */;
+			buildPhases = (
+				9609C73912AE065E00763E12 /* Resources */,
+				9609C73A12AE065E00763E12 /* Sources */,
+				9609C73B12AE065E00763E12 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataUtility;
+			productName = DataUtility;
+			productReference = 9609C73D12AE065E00763E12 /* DataUtility.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ScenicRoute" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* ScenicRoute */,
+				9609C73C12AE065E00763E12 /* DataUtility */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				9672EEA2128C96EC004256E1 /* gDirectionsResponse.xml in Resources */,
+				55A0671712B7381A00C316DD /* AnnotationViewController.xib in Resources */,
+				55AC50A212BD78F3005B61C0 /* yp_icon.png in Resources */,
+				967C979B12BB210800F76DDB /* metadata.sqlite in Resources */,
+				967C9AE812BC6DA000F76DDB /* hwy-walkley-split.xml in Resources */,
+				9620ED2012C3EFC10068AE71 /* hwy-walkley-vanier.xml in Resources */,
+				5516A6E012C46A5A0007D885 /* destination-bg.png in Resources */,
+				5516A6ED12C470FB0007D885 /* swap.png in Resources */,
+				5516A72012C477060007D885 /* gps-arrow.png in Resources */,
+				968626B612C46C29009D11FA /* app57.png in Resources */,
+				968626B712C46C29009D11FA /* app114.png in Resources */,
+				968626B812C46C29009D11FA /* app512.png in Resources */,
+				5565EE0B12D57858003E881B /* yp_badge.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9609C73912AE065E00763E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963BB6C012AE9AE6001CFDD0 /* HighwayRamps.json in Resources */,
+				965C4AE612B1096E00B55144 /* DataUtility.xib in Resources */,
+				967C993D12BBE38F00F76DDB /* gDirectionsResponse.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* ScenicRouteAppDelegate.m in Sources */,
+				960383EA126C69F700BEC8F3 /* MapStateViewController.m in Sources */,
+				960383ED126C6BEA00BEC8F3 /* SearchViewController.m in Sources */,
+				96038409126CADA900BEC8F3 /* DirectionsViewController.m in Sources */,
+				964B0BEA126FF23400890400 /* MapViewBaseViewController.m in Sources */,
+				96210C4A127FB1BE00943D10 /* BaseAnnotation.m in Sources */,
+				96210C55127FB4C100943D10 /* DetourOverlay.m in Sources */,
+				96A05907128A3ECE00A37639 /* GoogleDirectionsDataParser.m in Sources */,
+				96A05963128A4C0A00A37639 /* GoogleRoute.m in Sources */,
+				96A05966128A4C2100A37639 /* GoogleRouteStep.m in Sources */,
+				96A05969128A4CB700A37639 /* GoogleRouteLeg.m in Sources */,
+				96067DCD1294D1BA00FF1FDF /* RouteEndAnnotation.m in Sources */,
+				552F71FC12AB1BA8002A4114 /* POIAnnotation.m in Sources */,
+				552F720812AB1C29002A4114 /* YellowPagesDataParser.m in Sources */,
+				552F720912AB1C29002A4114 /* DataParser.m in Sources */,
+				552F720A12AB1C29002A4114 /* CanPagesDataParser.m in Sources */,
+				552F720B12AB1C29002A4114 /* GoogleDataParser.m in Sources */,
+				9606808D1296234900FF1FDF /* ScenicRoute.xcdatamodel in Sources */,
+				963BB61712AE88C7001CFDD0 /* AppData.m in Sources */,
+				55A0671812B7381A00C316DD /* AnnotationViewController.m in Sources */,
+				963ABB7312B7A2F40016185E /* HighwayDetour.m in Sources */,
+				963ABB7412B7A2F40016185E /* HighwayDetourPoint.m in Sources */,
+				963ABC3312B7A8BB0016185E /* Highway.m in Sources */,
+				963ABC3512B7A8BB0016185E /* HighwayDetour+Utility.m in Sources */,
+				963ABC3712B7A8BB0016185E /* HighwayDetourStep.m in Sources */,
+				963ABC3812B7A8BB0016185E /* HighwayRamp.m in Sources */,
+				963ABC3912B7A8BB0016185E /* HighwayRamp+Utility.m in Sources */,
+				963ABC4B12B7A9600016185E /* HighwayRampRect.m in Sources */,
+				9667D91C12B81B8B007C7FE9 /* HighwayDetourRouter.m in Sources */,
+				9667D95D12B87274007C7FE9 /* HighwayNamedExit.m in Sources */,
+				967C979E12BB26F600F76DDB /* HighwayExitAnnotation.m in Sources */,
+				967C9B5F12BC7EF500F76DDB /* HighwayRedZoneOverlay.m in Sources */,
+				967CA75512C1CE4C00F76DDB /* BasicRoute.m in Sources */,
+				967CA79812C2246300F76DDB /* RouteRequest.m in Sources */,
+				967D915112C2F73E00B0CF6F /* GenericParserErrorAlert.m in Sources */,
+				96F8ED8812C79E570082252A /* WaitView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9609C73A12AE065E00763E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9609C7B412AE0DE600763E12 /* NSObject+SBJSON.m in Sources */,
+				9609C7B512AE0DE600763E12 /* NSString+SBJSON.m in Sources */,
+				9609C7B612AE0DE600763E12 /* SBJsonParser.m in Sources */,
+				9609C7B712AE0DE600763E12 /* SBJsonStreamWriter.m in Sources */,
+				9609C7B812AE0DE600763E12 /* SBJsonWriter.m in Sources */,
+				963BB68712AE9527001CFDD0 /* AppData.m in Sources */,
+				963BB73712AF32E1001CFDD0 /* ScenicRoute.xcdatamodel in Sources */,
+				965C4A7012B1058400B55144 /* main.m in Sources */,
+				965C4A7D12B105DF00B55144 /* DataUtilityAppDelegate.m in Sources */,
+				965C4B1312B10CA800B55144 /* OperationsViewController.m in Sources */,
+				965C4B1612B10CDE00B55144 /* DataViewController.m in Sources */,
+				96F800B812B478F300BE70AE /* GoogleDirectionsDataParser.m in Sources */,
+				96F800BB12B4790F00BE70AE /* DataParser.m in Sources */,
+				96F800BC12B4791100BE70AE /* GoogleDataParser.m in Sources */,
+				96F800BF12B4792500BE70AE /* GoogleRoute.m in Sources */,
+				96F800C012B4792600BE70AE /* GoogleRouteLeg.m in Sources */,
+				96F800C112B4792700BE70AE /* GoogleRouteStep.m in Sources */,
+				963ABCCD12B7AABF0016185E /* HighwayRampRect.m in Sources */,
+				963ABCCE12B7AAC00016185E /* HighwayRamp.m in Sources */,
+				963ABCCF12B7AAC10016185E /* HighwayRamp+Utility.m in Sources */,
+				963ABCD012B7AAC20016185E /* HighwayDetourStep.m in Sources */,
+				963ABCD112B7AAC30016185E /* HighwayDetourPoint.m in Sources */,
+				963ABCD212B7AAC30016185E /* HighwayDetour.m in Sources */,
+				963ABCD312B7AAC40016185E /* HighwayDetour+Utility.m in Sources */,
+				963ABCD412B7AAC50016185E /* Highway.m in Sources */,
+				963ABCD712B7AAD70016185E /* HighwayDetourLoader.m in Sources */,
+				963ABCD812B7AAE70016185E /* HighwayRampLoader.m in Sources */,
+				967C996212BBE60300F76DDB /* HighwayNamedExit.m in Sources */,
+				967D919312C2FA7D00B0CF6F /* GenericParserErrorAlert.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ScenicRoute_Prefix.pch;
+				INFOPLIST_FILE = "ScenicRoute-Info.plist";
+				PRODUCT_NAME = ScenicRoute;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ScenicRoute_Prefix.pch;
+				INFOPLIST_FILE = "ScenicRoute-Info.plist";
+				PRODUCT_NAME = ScenicRoute;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9609C74012AE065F00763E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "DataUtility-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = DataUtility;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9609C74112AE065F00763E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/lib\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "DataUtility-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = DataUtility;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DDEBUG=1";
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "ScenicRoute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9609C74212AE065F00763E12 /* Build configuration list for PBXNativeTarget "DataUtility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9609C74012AE065F00763E12 /* Debug */,
+				9609C74112AE065F00763E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ScenicRoute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

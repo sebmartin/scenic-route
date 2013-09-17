@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<DirectionsResponse> 
+ <status>OK</status> 
+ <route> 
+  <summary>Innes Rd/Regional Road 30 and ON-417 W</summary> 
+  <leg> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4539600</lat> 
+     <lng>-75.5172600</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4543000</lat> 
+     <lng>-75.5163800</lng> 
+    </end_location> 
+    <polyline> 
+     <points>gvltGzm|kMcAoD</points> 
+     <levels>BB</levels> 
+    </polyline> 
+    <duration> 
+     <value>8</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Head &lt;b&gt;northeast&lt;/b&gt; on &lt;b&gt;D'Amour Crescent&lt;/b&gt; toward &lt;b&gt;Viseneau Dr&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>78</value> 
+     <text>78 m</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4543000</lat> 
+     <lng>-75.5163800</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4514100</lat> 
+     <lng>-75.5156100</lng> 
+    </end_location> 
+    <polyline> 
+     <points>kxltGjh|kMnHcDt@BfBl@t@C|@c@</points> 
+     <levels>B????B</levels> 
+    </polyline> 
+    <duration> 
+     <value>55</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Viseneau Dr&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>339</value> 
+     <text>0.3 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4514100</lat> 
+     <lng>-75.5156100</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4151700</lat> 
+     <lng>-75.6059400</lng> 
+    </end_location> 
+    <polyline> 
+     <points>ifltGpc|kMlKf^dHtTrTbv@`Ove@dCbFvBhCrAdA`DtAhL~B`C|@`B`AbB~AfAvAzApCn@dB|t@vdCv@xC^xB\dDJnCErFiCvh@FjEf@nE|@vDfUbv@xEbSxAbFlDbJdLl_@dD`K`CpGlAfEfA`F</points> 
+     <levels>B???@??@??@???@?@???@???@?????????B</levels> 
+    </polyline> 
+    <duration> 
+     <value>616</value> 
+     <text>10 mins</text> 
+    </duration> 
+    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Innes Rd/Regional Road 30&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>8429</value> 
+     <text>8.4 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4151700</lat> 
+     <lng>-75.6059400</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4064400</lat> 
+     <lng>-75.6974900</lng> 
+    </end_location> 
+    <polyline> 
+     <points>ycetGbxmlM|@vJRhFKfFOrAk@lByAvB}AxAiEpCeCn@mM~AqAf@wAx@sCbC{B|Cu@~AiArDi@bC]fCUrD@vGZhE^fCrEdRxBjLdAxHjAhMt@vRnEr`B\|G^hEh@~CjE|Pt@hFN`CjBvi@ExE{@xLOxEF`Gn@|H|@xEp@bCrQdg@jAdExGrXrBpHxKr[tGhQvFzQ</points> 
+     <levels>B????@??@????@???@??A?????@??@????@?????@????????B</levels> 
+    </polyline> 
+    <duration> 
+     <value>346</value> 
+     <text>6 mins</text> 
+    </duration> 
+    <html_instructions>Take the ramp onto &lt;b&gt;ON-417 W&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>8171</value> 
+     <text>8.2 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4064400</lat> 
+     <lng>-75.6974900</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4058600</lat> 
+     <lng>-75.7008500</lng> 
+    </end_location> 
+    <polyline> 
+     <points>gmctGht_mM?XpAxG`@jJ</points> 
+     <levels>B??B</levels> 
+    </polyline> 
+    <duration> 
+     <value>23</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Take exit &lt;b&gt;121A&lt;/b&gt; toward &lt;b&gt;Av. Bronson Avenue&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>273</value> 
+     <text>0.3 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4058600</lat> 
+     <lng>-75.7008500</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4053800</lat> 
+     <lng>-75.7021400</lng> 
+    </end_location> 
+    <polyline> 
+     <points>sictGhi`mM~A`G</points> 
+     <levels>BB</levels> 
+    </polyline> 
+    <duration> 
+     <value>9</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Merge onto &lt;b&gt;Catherine St/Regional Road 60&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>114</value> 
+     <text>0.1 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4053800</lat> 
+     <lng>-75.7021400</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4114700</lat> 
+     <lng>-75.7057800</lng> 
+    </end_location> 
+    <polyline> 
+     <points>sfctGjq`mMqBrAoa@bS</points> 
+     <levels>B?B</levels> 
+    </polyline> 
+    <duration> 
+     <value>76</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Bronson Ave/Regional Road 79&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>735</value> 
+     <text>0.7 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4114700</lat> 
+     <lng>-75.7057800</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4094900</lat> 
+     <lng>-75.7105700</lng> 
+    </end_location> 
+    <polyline> 
+     <points>uldtGbhamMhD`K`A`FdAvDxA`D</points> 
+     <levels>B???B</levels> 
+    </polyline> 
+    <duration> 
+     <value>83</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Turn &lt;b&gt;left&lt;/b&gt; at &lt;b&gt;Somerset St W/Regional Road 36&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>436</value> 
+     <text>0.4 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4094900</lat> 
+     <lng>-75.7105700</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4215400</lat> 
+     <lng>-75.7185300</lng> 
+    </end_location> 
+    <polyline> 
+     <points>i`dtG`fbmMkShKgFzCsGxCOA_MzFcBfA}C~Cw@hAmBhB_EnBiDpB</points> 
+     <levels>B????@?????B</levels> 
+    </polyline> 
+    <duration> 
+     <value>190</value> 
+     <text>3 mins</text> 
+    </duration> 
+    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Booth St&lt;/b&gt;&lt;div style=&quot;font-size:0.9em&quot;&gt;Entering QC&lt;/div&gt;</html_instructions> 
+    <distance> 
+     <value>1484</value> 
+     <text>1.5 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4215400</lat> 
+     <lng>-75.7185300</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4261100</lat> 
+     <lng>-75.7198900</lng> 
+    </end_location> 
+    <polyline> 
+     <points>skftGxwcmMwIrEy@FIHuNh@</points> 
+     <levels>B@??B</levels> 
+    </polyline> 
+    <duration> 
+     <value>93</value> 
+     <text>2 mins</text> 
+    </duration> 
+    <html_instructions>Continue onto &lt;b&gt;Chaudières Bridge&lt;/b&gt;&lt;div style=&quot;font-size:0.9em&quot;&gt;Continue to follow Rue Eddy&lt;/div&gt;</html_instructions> 
+    <distance> 
+     <value>527</value> 
+     <text>0.5 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4261100</lat> 
+     <lng>-75.7198900</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4262400</lat> 
+     <lng>-75.7168900</lng> 
+    </end_location> 
+    <polyline> 
+     <points>ehgtGh`dmMYwQ</points> 
+     <levels>BB</levels> 
+    </polyline> 
+    <duration> 
+     <value>51</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Rue Wellington&lt;/b&gt;&lt;div style=&quot;font-size:0.9em&quot;&gt;Destination will be on the left&lt;/div&gt;</html_instructions> 
+    <distance> 
+     <value>235</value> 
+     <text>0.2 km</text> 
+    </distance> 
+   </step> 
+   <duration> 
+    <value>1550</value> 
+    <text>26 mins</text> 
+   </duration> 
+   <distance> 
+    <value>20821</value> 
+    <text>20.8 km</text> 
+   </distance> 
+   <start_location> 
+    <lat>45.4539600</lat> 
+    <lng>-75.5172600</lng> 
+   </start_location> 
+   <end_location> 
+    <lat>45.4262400</lat> 
+    <lng>-75.7168900</lng> 
+   </end_location> 
+   <start_address>1840 D'Amour Crescent, Ottawa, ON K1C 5G5, Canada</start_address> 
+   <end_address>165 Rue Wellington, Hull, QC J8X 2J1, Canada</end_address> 
+  </leg> 
+  <copyrights>Map data ©2010 Google</copyrights> 
+  <overview_polyline> 
+   <points>gvltGzm|kMcAoDnHcDt@BfBl@t@C|@c@lKf^dHtTrTbv@fNzc@hAvC|@dBrAjBz@~@lBvAfCbAhMjCbA^~BrAlAfA|AnBzApCn@dB|t@vdClAhFf@nEJ`GE`CiCvh@FjEf@nE|@vDfUbv@xEbSxAbFlDbJdLl_@jIhVpBrIt@|HX`FEpGSjBa@xAa@x@aApAqCdCuCdBeCn@{KpAcCt@wAx@sBbB{C|D_B`EsA|Fk@lHB|FZhE^fCrEdRxBjLdAxHjAhMt@vRnEr`B\|G^hEh@~CjE|Pt@hFN`CjBvi@ExE{@xLOxEF`Gn@|H|@xEp@bCrQdg@jAdExGrXrBpHxKr[tGhQlF~PzAnI`@jJ~A`GqBrAoa@bShD`K`A`FdAvDxA`DkShKgFzCsGxCOA_MzFcBfA}C~Cw@hAmBhB_EnBaOdIy@FIHuNh@YwQ</points> 
+   <levels>B@????@????@???@???@???@?@?????@????????A?@???@?@??@??@???A?????@??@????@?????@????????@??A?@???@??????????@??@B</levels> 
+  </overview_polyline> 
+ </route> 
+</DirectionsResponse> 

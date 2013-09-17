@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<DirectionsResponse> 
+ <status>OK</status> 
+ <route> 
+  <summary>ON-417 W</summary> 
+  <leg> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.3948600</lat> 
+     <lng>-75.6014600</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.3982800</lat> 
+     <lng>-75.5921200</lng> 
+    </end_location> 
+    <polyline> 
+     <points>{datGb|llMkTky@</points> 
+     <levels>BB</levels> 
+    </polyline> 
+    <duration> 
+     <value>57</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Head &lt;b&gt;northeast&lt;/b&gt; on &lt;b&gt;Walkley Rd E/Regional Road 74 E&lt;/b&gt; toward &lt;b&gt;Sheffield Rd&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>823</value> 
+     <text>0.8 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.3982800</lat> 
+     <lng>-75.5921200</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4225100</lat> 
+     <lng>-75.6160400</lng> 
+    </end_location> 
+    <polyline> 
+     <points>gzatGvaklM@k@MmANaBj@_A^SVIr@F|@z@X|AEpAMf@e@r@WPgDh@UPgAHqCf@eCn@yChA_IxEsI|GuFvDoB`AqDpAqMdD}BhAsBzAqC`Ds@jAkBtDoArDcArFk@lGq@zKu@xFs@`DcAdDiCdFsBjCiAdA}AjAaBz@oErAmM~AsB|@qAx@wBlB{B|Cu@~A</points> 
+     <levels>B??@???@?????@?????@??@????@???@???@??@???@??@???B</levels> 
+    </polyline> 
+    <duration> 
+     <value>174</value> 
+     <text>3 mins</text> 
+    </duration> 
+    <html_instructions>Slight &lt;b&gt;right&lt;/b&gt; to merge onto &lt;b&gt;ON-417 W&lt;/b&gt; toward &lt;b&gt;Ottawa&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>3954</value> 
+     <text>4.0 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4225100</lat> 
+     <lng>-75.6160400</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4255000</lat> 
+     <lng>-75.6247700</lng> 
+    </end_location> 
+    <polyline> 
+     <points>uqftGfwolMiAnCqA~Fa@fDi@hKWzBg@`CuBxFoAdCgBpC</points> 
+     <levels>B?????@??B</levels> 
+    </polyline> 
+    <duration> 
+     <value>55</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Take exit &lt;b&gt;113B&lt;/b&gt; toward &lt;b&gt;Promenade Aviation Parkway&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>777</value> 
+     <text>0.8 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4255000</lat> 
+     <lng>-75.6247700</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4276800</lat> 
+     <lng>-75.6267800</lng> 
+    </end_location> 
+    <polyline> 
+     <points>kdgtGxmqlMaDxDgCvBiC~A</points> 
+     <levels>B??B</levels> 
+    </polyline> 
+    <duration> 
+     <value>19</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Continue straight</html_instructions> 
+    <distance> 
+     <value>290</value> 
+     <text>0.3 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4276800</lat> 
+     <lng>-75.6267800</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4316500</lat> 
+     <lng>-75.6177600</lng> 
+    </end_location> 
+    <polyline> 
+     <points>_rgtGjzqlMo@Qi@o@_Uiu@</points> 
+     <levels>B??B</levels> 
+    </polyline> 
+    <duration> 
+     <value>87</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Ogilvie Rd&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>840</value> 
+     <text>0.8 km</text> 
+    </distance> 
+   </step> 
+   <step> 
+    <travel_mode>DRIVING</travel_mode> 
+    <start_location> 
+     <lat>45.4316500</lat> 
+     <lng>-75.6177600</lng> 
+    </start_location> 
+    <end_location> 
+     <lat>45.4298200</lat> 
+     <lng>-75.6165300</lng> 
+    </end_location> 
+    <polyline> 
+     <points>yjhtG~aplMlJuF</points> 
+     <levels>BB</levels> 
+    </polyline> 
+    <duration> 
+     <value>28</value> 
+     <text>1 min</text> 
+    </duration> 
+    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;City Park Dr&lt;/b&gt;</html_instructions> 
+    <distance> 
+     <value>225</value> 
+     <text>0.2 km</text> 
+    </distance> 
+   </step> 
+   <duration> 
+    <value>420</value> 
+    <text>7 mins</text> 
+   </duration> 
+   <distance> 
+    <value>6909</value> 
+    <text>6.9 km</text> 
+   </distance> 
+   <start_location> 
+    <lat>45.3948600</lat> 
+    <lng>-75.6014600</lng> 
+   </start_location> 
+   <end_location> 
+    <lat>45.4298200</lat> 
+    <lng>-75.6165300</lng> 
+   </end_location> 
+   <start_address>2668-2672 Walkley Rd, Ottawa, ON K0A 2Y0, Canada</start_address> 
+   <end_address>City Park Dr, Ottawa, ON K1J 1G7, Canada</end_address> 
+  </leg> 
+  <copyrights>Map data ©2010 Google</copyrights> 
+  <overview_polyline> 
+   <points>{datGb|llMkTky@@k@MmANaBj@_Av@]r@F\T^d@Pj@Fp@EpA]`Am@j@gDh@UPgAHqCf@eCn@yChA_IxEsI|GuFvDoB`AqDpAeJxBuDrAgD|BqC`D_D`G{AtEw@pESpBiAvP_@dDm@dD{@~CgAzCgAtBqCtD_CpBkBjAqEzAwLxA{A^{CdBwAlAuA~AeA|AiBzDcAvDc@zBa@fDi@hKWzBg@`C{AfEiBvDmDfF{AbBgB|AiDxBo@Qi@o@_Uiu@lJuF</points> 
+   <levels>B@????A???@???@?????@????????@?????????@??@??@??@????????@????A??@B</levels> 
+  </overview_polyline> 
+ </route> 
+</DirectionsResponse> 

@@ -1,0 +1,2186 @@
+[
+	{
+		"highway":   "ON-417",
+		"name":      "Anderson",
+		"number":    "104",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.36965,
+		"longitude": -75.538924,
+		"rampRects": [
+				{
+					"topLeftLat": 45.370434,
+					"topLeftLng": -75.53901,
+					"bottomRightLat": 45.369552,
+					"bottomRightLng": -75.537368
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Anderson",
+		"number":    "104",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.369016, 
+		"longitude": -75.535512,
+		"rampRects": [
+				{
+					"topLeftLat": 45.370434,
+					"topLeftLng": -75.537293,
+					"bottomRightLat": 45.36928,
+					"bottomRightLng": -75.53578
+				},
+				{
+					"topLeftLat": 45.369295,
+					"topLeftLng": -75.535887,
+					"bottomRightLat": 45.369032,
+					"bottomRightLng": -75.535265
+				},
+				{
+					"topLeftLat": 45.369333,
+					"topLeftLng": -75.536349,
+					"bottomRightLat": 45.369084,
+					"bottomRightLng": -75.535877
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Anderson",
+		"number":    "104",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.369446,
+		"longitude": -75.542797,
+		"rampRects": [
+				{
+					"topLeftLat": 45.369207,
+					"topLeftLng": -75.542672,
+					"bottomRightLat": 45.368127,
+					"bottomRightLng": -75.541027
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Anderson",
+		"number":    "104",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.368805,
+		"longitude": -75.538446,
+		"rampRects": [
+				{
+					"topLeftLat": 45.368896,
+					"topLeftLng": -75.540758,
+					"bottomRightLat": 45.36781,
+					"bottomRightLng": -75.539231
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.398051,
+		"longitude": -75.592477,
+		"rampRects": [
+				{
+					"topLeftLat": 45.397373,
+					"topLeftLng": -75.592343,
+					"bottomRightLat": 45.396981,
+					"bottomRightLng": -75.590873
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.401433,
+		"longitude": -75.593453,
+		"rampRects": [
+				{
+					"topLeftLat": 45.400778,
+					"topLeftLng": -75.592618,
+					"bottomRightLat": 45.399162,
+					"bottomRightLng": -75.590331
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.393726,
+		"longitude": -75.591924,
+		"rampRects": [
+				{
+					"topLeftLat": 45.396921,
+					"topLeftLng": -75.592096,
+					"bottomRightLat": 45.395188,
+					"bottomRightLng": -75.590454
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.401234,
+		"longitude": -75.594408,
+		"rampRects": [
+				{
+					"topLeftLat": 45.400665,
+					"topLeftLng": -75.595561,
+					"bottomRightLat": 45.399256,
+					"bottomRightLng": -75.594159
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Walkley",
+		"number":    "110",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.398463,
+		"longitude": -75.593241,
+		"rampRects": [
+				{
+					"topLeftLat": 45.399241,
+					"topLeftLng": -75.594896,
+					"bottomRightLat": 45.398616,
+					"bottomRightLng": -75.593512
+				}
+			]
+	},
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.413153,
+		"longitude": -75.605378,
+		"rampRects": [
+				{
+					"topLeftLat": 45.41423,
+					"topLeftLng": -75.607063,
+					"bottomRightLat": 45.413342,
+					"bottomRightLng": -75.605335
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.413635,
+		"longitude": -75.608211,
+		"rampRects": [
+				{
+					"topLeftLat": 45.414148,
+					"topLeftLng": -75.60806,
+					"bottomRightLat": 45.4135,
+					"bottomRightLng": -75.607181
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.415292,
+		"longitude": -75.611376,
+		"rampRects": [
+				{
+					"topLeftLat": 45.4151,
+					"topLeftLng": -75.610791,
+					"bottomRightLat": 45.414731,
+					"bottomRightLng": -75.608162
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.415682,
+		"longitude": -75.612832,
+		"rampRects": [
+				{
+					"topLeftLat": 45.415292,
+					"topLeftLng": -75.612813,
+					"bottomRightLat": 45.414517,
+					"bottomRightLng": -75.612352
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Innes",
+		"number":    "112",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.414351,
+		"longitude": -75.61129,
+		"rampRects": [
+				{
+					"topLeftLat": 45.414566,
+					"topLeftLng": -75.612443,
+					"bottomRightLat": 45.414381,
+					"bottomRightLng": -75.61144
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "ON-174",
+		"number":    "113A",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.422612,
+		"longitude": -75.615742,
+		"rampRects": [
+				{
+					"topLeftLat": 45.424389,
+					"topLeftLng": -75.616869,
+					"bottomRightLat": 45.422989,
+					"bottomRightLng": -75.61601
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "ON-174",
+		"number":    "113A",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.42268,
+		"longitude": -75.623682,
+		"rampRects": [
+				{
+					"topLeftLat": 45.422812,
+					"topLeftLng": -75.623767,
+					"bottomRightLat": 45.42271,
+					"bottomRightLng": -75.623424
+				},
+				{
+					"topLeftLat": 45.422887,
+					"topLeftLng": -75.623555,
+					"bottomRightLat": 45.422774,
+					"bottomRightLng": -75.623207
+				},
+				{
+					"topLeftLat": 45.422949,
+					"topLeftLng": -75.623346,
+					"bottomRightLat": 45.422861,
+					"bottomRightLng": -75.622957
+				},
+				{
+					"topLeftLat": 45.423073,
+					"topLeftLng": -75.623049,
+					"bottomRightLat": 45.422974,
+					"bottomRightLng": -75.622614
+				},
+				{
+					"topLeftLat": 45.422576,
+					"topLeftLng": -75.624551,
+					"bottomRightLat": 45.422388,
+					"bottomRightLng": -75.624285
+				},
+				{
+					"topLeftLat": 45.421767,
+					"topLeftLng": -75.626321,
+					"bottomRightLat": 45.421731,
+					"bottomRightLng": -75.626248
+				},
+				{
+					"topLeftLat": 45.422494,
+					"topLeftLng": -75.624449,
+					"bottomRightLat": 45.422396,
+					"bottomRightLng": -75.624282
+				},
+				{
+					"topLeftLat": 45.422364,
+					"topLeftLng": -75.624762,
+					"bottomRightLat": 45.422268,
+					"bottomRightLng": -75.624631
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "ON-174",
+		"number":    "113A",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.422898,
+		"longitude": -75.621203,
+		"rampRects": [
+				{
+					"topLeftLat": 45.423147,
+					"topLeftLng": -75.621257,
+					"bottomRightLat": 45.422812,
+					"bottomRightLng": -75.619224
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "ON-174",
+		"number":    "113A",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.4221,
+		"longitude": -75.617609,
+		"rampRects": [
+				{
+					"topLeftLat": 45.422514,
+					"topLeftLng": -75.620978,
+					"bottomRightLat": 45.422183,
+					"bottomRightLng": -75.618907
+				},
+				{
+					"topLeftLat": 45.422337,
+					"topLeftLng": -75.619122,
+					"bottomRightLat": 45.422119,
+					"bottomRightLng": -75.617942
+				}
+			]
+	},
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Aviation",
+		"number":    "113B",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.423606,
+		"longitude": -75.620313,
+		"rampRects": [
+				{
+					"topLeftLat": 45.423776,
+					"topLeftLng": -75.621021,
+					"bottomRightLat": 45.423437,
+					"bottomRightLng": -75.619149
+				},
+				{
+					"topLeftLat": 45.424551,
+					"topLeftLng": -75.623124,
+					"bottomRightLat": 45.423791,
+					"bottomRightLng": -75.621665
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Aviation",
+		"number":    "113B",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.4221,
+		"longitude": -75.617609,
+		"rampRects": [
+				{
+					"topLeftLat": 45.422514,
+					"topLeftLng": -75.620978,
+					"bottomRightLat": 45.422183,
+					"bottomRightLng": -75.618907
+				},
+				{
+					"topLeftLat": 45.422337,
+					"topLeftLng": -75.619122,
+					"bottomRightLat": 45.422119,
+					"bottomRightLng": -75.617942
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "St. Laurent",
+		"number":    "115",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.420812,
+		"longitude": -75.630704,
+		"rampRects": [
+				{
+					"topLeftLat": 45.420801,
+					"topLeftLng": -75.633289,
+					"bottomRightLat": 45.420658,
+					"bottomRightLng": -75.631744
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "St. Laurent",
+		"number":    "115",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.420346,
+		"longitude": -75.635988,
+		"rampRects": [
+				{
+					"topLeftLat": 45.420767,
+					"topLeftLng": -75.634915,
+					"bottomRightLat": 45.420477,
+					"bottomRightLng": -75.633917
+				},
+				{
+					"topLeftLat": 45.420447,
+					"topLeftLng": -75.635923,
+					"bottomRightLat": 45.420361,
+					"bottomRightLng": -75.635435
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "St. Laurent",
+		"number":    "115",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.419992,
+		"longitude": -75.641255,
+		"rampRects": [
+				{
+					"topLeftLat": 45.420157,
+					"topLeftLng": -75.641744,
+					"bottomRightLat": 45.420014,
+					"bottomRightLng": -75.640606
+				},
+				{
+					"topLeftLat": 45.420199,
+					"topLeftLng": -75.640724,
+					"bottomRightLat": 45.420082,
+					"bottomRightLng": -75.639582
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "St. Laurent",
+		"number":    "115",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.419743,
+		"longitude": -75.640145,
+		"rampRects": [
+				{
+					"topLeftLat": 45.419879,
+					"topLeftLng": -75.638498,
+					"bottomRightLat": 45.419348,
+					"bottomRightLng": -75.636717
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "St. Laurent",
+		"number":    "115",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.420165,
+		"longitude": -75.63455,
+		"rampRects": [
+				{
+					"topLeftLat": 45.420074,
+					"topLeftLng": -75.636325,
+					"bottomRightLat": 45.419333,
+					"bottomRightLng": -75.635199
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "St. Laurent",
+		"number":    "115",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.420395,
+		"longitude": -75.631176,
+		"rampRects": [
+				{
+					"topLeftLat": 45.420146,
+					"topLeftLng": -75.634282,
+					"bottomRightLat": 45.419133,
+					"bottomRightLng": -75.632683
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Riverside",
+		"number":    "117",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.419156,
+		"longitude": -75.652687,
+		"rampRects": [
+				{
+					"topLeftLat": 45.419325,
+					"topLeftLng": -75.654709,
+					"bottomRightLat": 45.419077,
+					"bottomRightLng": -75.652649
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Riverside",
+		"number":    "117",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.417608,
+		"longitude": -75.657386,
+		"rampRects": [
+				{
+					"topLeftLat": 45.419242,
+					"topLeftLng": -75.655519,
+					"bottomRightLat": 45.418391,
+					"bottomRightLng": -75.654817
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Riverside",
+		"number":    "117",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.417567,
+		"longitude": -75.658872,
+		"rampRects": [
+				{
+					"topLeftLat": 45.419291,
+					"topLeftLng": -75.657821,
+					"bottomRightLat": 45.417808,
+					"bottomRightLng": -75.656995
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Riverside",
+		"number":    "117",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.416993,
+		"longitude": -75.660095,
+		"rampRects": [
+				{
+					"topLeftLat": 45.41707,
+					"topLeftLng": -75.659902,
+					"bottomRightLat": 45.416219,
+					"bottomRightLng": -75.658464
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Riverside",
+		"number":    "117",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.41722,
+		"longitude": -75.657477,
+		"rampRects": [
+				{
+					"topLeftLat": 45.41719,
+					"topLeftLng": -75.658443,
+					"bottomRightLat": 45.41649,
+					"bottomRightLng": -75.657037
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Riverside",
+		"number":    "117",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.418779,
+		"longitude": -75.652204,
+		"rampRects": [
+				{
+					"topLeftLat": 45.417514,
+					"topLeftLng": -75.65634,
+					"bottomRightLat": 45.416753,
+					"bottomRightLng": -75.655257
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Nicholas",
+		"number":    "118",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.417382,
+		"longitude": -75.670717,
+		"rampRects": [
+				{
+					"topLeftLat": 45.418267,
+					"topLeftLng": -75.674939,
+					"bottomRightLat": 45.418034,
+					"bottomRightLng": -75.674171
+				},
+				{
+					"topLeftLat": 45.417593,
+					"topLeftLng": -75.674563,
+					"bottomRightLat": 45.417386,
+					"bottomRightLng": -75.673699
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Nicholas",
+		"number":    "118",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.415304,
+		"longitude": -75.676618,
+		"rampRects": [
+				{
+					"topLeftLat": 45.417186,
+					"topLeftLng": -75.675432,
+					"bottomRightLat": 45.416155,
+					"bottomRightLng": -75.67474
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Nicholas",
+		"number":    "118",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.414483,
+		"longitude": -75.677519,
+		"rampRects": [
+				{
+					"topLeftLat": 45.414882,
+					"topLeftLng": -75.676854,
+					"bottomRightLat": 45.414471,
+					"bottomRightLng": -75.674933
+				},
+				{
+					"topLeftLat": 45.415066,
+					"topLeftLng": -75.676489,
+					"bottomRightLat": 45.414784,
+					"bottomRightLng": -75.675094
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Nicholas",
+		"number":    "118",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.416896,
+		"longitude": -75.671516,
+		"rampRects": [
+				{
+					"topLeftLat": 45.41571,
+					"topLeftLng": -75.675062,
+					"bottomRightLat": 45.414844,
+					"bottomRightLng": -75.674064
+				},
+				{
+					"topLeftLat": 45.416388,
+					"topLeftLng": -75.673243
+					"bottomRightLat": 45.415285,
+					"bottomRightLng": -75.672506
+				}
+			]
+	},
+	
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Metcalfe",
+		"number":    "119",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.412325,
+		"longitude": -75.683833,
+		"rampRects": [
+				{
+					"topLeftLat": 45.41177,
+					"topLeftLng": -75.68663,
+					"bottomRightLat": 45.411576,
+					"bottomRightLng": -75.685847
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Metcalfe",
+		"number":    "119",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.409794,
+		"longitude": -75.690211,
+		"rampRects": [
+				{
+					"topLeftLat": 45.41045,
+					"topLeftLng": -75.689755,
+					"bottomRightLat": 45.410092,
+					"bottomRightLng": -75.689406
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Metcalfe",
+		"number":    "119",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.411858,
+		"longitude": -75.684283,
+		"rampRects": [
+				{
+					"topLeftLat": 45.411078,
+					"topLeftLng": -75.686472,
+					"bottomRightLat": 45.410901,
+					"bottomRightLng": -75.686247
+				},
+				{
+					"topLeftLat": 45.411557,
+					"topLeftLng": -75.685265,
+					"bottomRightLat": 45.411376,
+					"bottomRightLng": -75.685067
+				}
+			]
+	},
+	
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Kent",
+		"number":    "120",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.406644,
+		"longitude": -75.697056,
+		"rampRects": [
+				{
+					"topLeftLat": 45.407874,
+					"topLeftLng": -75.695873,
+					"bottomRightLat": 45.407247,
+					"bottomRightLng": -75.695594
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Kent",
+		"number":    "120",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.406343,
+		"longitude": -75.69711,
+		"rampRects": [
+				{
+					"topLeftLat": 45.406399,
+					"topLeftLng": -75.697032,
+					"bottomRightLat": 45.406326,
+					"bottomRightLng": -75.696721
+				},
+				{
+					"topLeftLat": 45.407533,
+					"topLeftLng": -75.694318,
+					"bottomRightLat": 45.407358,
+					"bottomRightLng": -75.693942
+				},
+				{
+					"topLeftLat": 45.407781,
+					"topLeftLng": -75.69377,
+					"bottomRightLat": 45.407578,
+					"bottomRightLng": -75.693537
+				}
+			]
+	},
+	
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Bronson",
+		"number":    "121A",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.406393,
+		"longitude": -75.697753,
+		"rampRects": [
+				{
+					"topLeftLat": 45.406066,
+					"topLeftLng": -75.700267,
+					"bottomRightLat": 45.40596,
+					"bottomRightLng": -75.698896
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Bronson",
+		"number":    "121A",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.404085,
+		"longitude": -75.705779,
+		"rampRects": [
+				{
+					"topLeftLat": 45.404842,
+					"topLeftLng": -75.703788,
+					"bottomRightLat": 45.404653,
+					"bottomRightLng": -75.703375
+				},
+				{
+					"topLeftLat": 45.404669,
+					"topLeftLng": -75.704395,
+					"bottomRightLat": 45.40451,
+					"bottomRightLng": -75.703901
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Bronson",
+		"number":    "121A",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.404156,
+		"longitude": -75.704239,
+		"rampRects": [
+				{
+					"topLeftLat": 45.404482,
+					"topLeftLng": -75.702922,
+					"bottomRightLat": 45.404267,
+					"bottomRightLng": -75.701691
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Rochester",
+		"number":    "121B",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.402906,
+		"longitude": -75.711709,
+		"rampRects": [
+				{
+					"topLeftLat": 45.403738,
+					"topLeftLng": -75.710124,
+					"bottomRightLat": 45.403456,
+					"bottomRightLng": -75.708938
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Rochester",
+		"number":    "121B",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.40274,
+		"longitude": -75.711156,
+		"rampRects": [
+				{
+					"topLeftLat": 45.402904,
+					"topLeftLng": -75.710435,
+					"bottomRightLat": 45.402787,
+					"bottomRightLng": -75.708351
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Parkdale",
+		"number":    "122",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.399264,
+		"longitude": -75.722945,
+		"rampRects": [
+				{
+					"topLeftLat": 45.399038,
+					"topLeftLng": -75.724374,
+					"bottomRightLat": 45.398942,
+					"bottomRightLng": -75.723572
+				},
+				{
+					"topLeftLat": 45.398812,
+					"topLeftLng": -75.725198,
+					"bottomRightLat": 45.398631,
+					"bottomRightLng": -75.724278
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Parkdale",
+		"number":    "122",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.395849,
+		"longitude": -75.729387,
+		"rampRects": [
+				{
+					"topLeftLat": 45.396845,
+					"topLeftLng": -75.728677,
+					"bottomRightLat": 45.396612,
+					"bottomRightLng": -75.728355
+				},
+				{
+					"topLeftLat": 45.396064,
+					"topLeftLng": -75.729436,
+					"bottomRightLat": 45.395928,
+					"bottomRightLng": -75.729267
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Parkdale",
+		"number":    "122",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.395985,
+		"longitude": -75.728741,
+		"rampRects": [
+				{
+					"topLeftLat": 45.396228,
+					"topLeftLng": -75.728443,
+					"bottomRightLat": 45.396073,
+					"bottomRightLng": -75.727891
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Parkdale",
+		"number":    "122",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.398491,
+		"longitude": -75.723889,
+		"rampRects": [
+				{
+					"topLeftLat": 45.3969210,
+					"topLeftLng": -75.7268010,
+					"bottomRightLat": 45.3969190,
+					"bottomRightLng": -75.7267990
+				}
+			]
+	},
+	
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Island Park",
+		"number":    "123",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.39069,
+		"longitude": -75.733588,
+		"rampRects": [
+				{
+					"topLeftLat": 45.390385,
+					"topLeftLng": -75.734843,
+					"bottomRightLat": 45.390114,
+					"bottomRightLng": -75.73406
+				},
+				{
+					"topLeftLat": 45.3902,
+					"topLeftLng": -75.735133,
+					"bottomRightLat": 45.390016,
+					"bottomRightLng": -75.734392
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Carling",
+		"number":    "124",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.387352,
+		"longitude": -75.736388,
+		"rampRects": [
+				{
+					"topLeftLat": 45.386646,
+					"topLeftLng": -75.737504,
+					"bottomRightLat": 45.38645,
+					"bottomRightLng": -75.737276
+				},
+				{
+					"topLeftLat": 45.38616,
+					"topLeftLng": -75.738488,
+					"bottomRightLat": 45.385807,
+					"bottomRightLng": -75.737995
+				},
+				{
+					"topLeftLat": 45.385679,
+					"topLeftLng": -75.739081,
+					"bottomRightLat": 45.385449,
+					"bottomRightLng": -75.738386
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Carling",
+		"number":    "124",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.381209,
+		"longitude": -75.743053,
+		"rampRects": [
+				{
+					"topLeftLat": 45.382458,
+					"topLeftLng": -75.742611,
+					"bottomRightLat": 45.381853,
+					"bottomRightLng": -75.7423
+				},
+				{
+					"topLeftLat": 45.381855,
+					"topLeftLng": -75.742702,
+					"bottomRightLat": 45.381663,
+					"bottomRightLng": -75.742506
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Carling",
+		"number":    "124",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.379413,
+		"longitude": -75.744609,
+		"rampRects": [
+				{
+					"topLeftLat": 45.380659,
+					"topLeftLng": -75.743236,
+					"bottomRightLat": 45.380159,
+					"bottomRightLng": -75.742375
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Carling",
+		"number":    "124",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.385796,
+		"longitude": -75.737574,
+		"rampRects": [
+				{
+					"topLeftLat": 45.384455,
+					"topLeftLng": -75.738976,
+					"bottomRightLat": 45.38415,
+					"bottomRightLng": -75.738719
+				},
+				{
+					"topLeftLat": 45.385016,
+					"topLeftLng": -75.738504,
+					"bottomRightLat": 45.384758,
+					"bottomRightLng": -75.738094
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Carling",
+		"number":    "124",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.387103,
+		"longitude": -75.736141,
+		"rampRects": [
+				{
+					"topLeftLat": 45.386275,
+					"topLeftLng": -75.737016,
+					"bottomRightLat": 45.385427,
+					"bottomRightLng": -75.736248
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Maitland",
+		"number":    "126",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.371127,
+		"longitude": -75.754125,
+		"rampRects": [
+				{
+					"topLeftLat": 45.370392,
+					"topLeftLng": -75.756097,
+					"bottomRightLat": 45.3701,
+					"bottomRightLng": -75.755139
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Maitland",
+		"number":    "126",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.368444,
+		"longitude": -75.756907,
+		"rampRects": [
+				{
+					"topLeftLat": 45.3701,
+					"topLeftLng": -75.75622,
+					"bottomRightLat": 45.369418,
+					"bottomRightLng": -75.755869
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Maitland",
+		"number":    "126",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.37066,
+		"longitude": -75.754048,
+		"rampRects": [
+				{
+					"topLeftLat": 45.370925,
+					"topLeftLng": -75.753879,
+					"bottomRightLat": 45.37065,
+					"bottomRightLng": -75.752902
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Maitland",
+		"number":    "126",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.372169,
+		"longitude": -75.752481,
+		"rampRects": [
+				{
+					"topLeftLat": 45.371694,
+					"topLeftLng": -75.753053,
+					"bottomRightLat": 45.370927,
+					"bottomRightLng": -75.752698
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Woodroffe",
+		"number":    "127A",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.362453,
+		"longitude": -75.766211,
+		"rampRects": [
+				{
+					"topLeftLat": 45.362391,
+					"topLeftLng": -75.768612,
+					"bottomRightLat": 45.361999,
+					"bottomRightLng": -75.767062
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Woodroffe",
+		"number":    "127A",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.361671,
+		"longitude": -75.767668,
+		"rampRects": [
+				{
+					"topLeftLat": 45.361612,
+					"topLeftLng": -75.770541,
+					"bottomRightLat": 45.360828,
+					"bottomRightLng": -75.769237
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Woodroffe",
+		"number":    "127A",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.359748,
+		"longitude": -75.771289,
+		"rampRects": [
+				{
+					"topLeftLat": 45.362093,
+					"topLeftLng": -75.770854,
+					"bottomRightLat": 45.360201,
+					"bottomRightLng": -75.770554
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Woodroffe",
+		"number":    "127A",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.358872,
+		"longitude": -75.772198,
+		"rampRects": [
+				{
+					"topLeftLat": 45.359679,
+					"topLeftLng": -75.770793,
+					"bottomRightLat": 45.3595,
+					"bottomRightLng": -75.769162
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Woodroffe",
+		"number":    "127A",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.358872,
+		"longitude": -75.772198,
+		"rampRects": [
+				{
+					"topLeftLat": 45.360448,
+					"topLeftLng": -75.769363,
+					"bottomRightLat": 45.359715,
+					"bottomRightLng": -75.768912
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Woodroffe",
+		"number":    "127A",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.362913,
+		"longitude": -75.764704,
+		"rampRects": [
+				{
+					"topLeftLat": 45.361232,
+					"topLeftLng": -75.767743,
+					"bottomRightLat": 45.360536,
+					"bottomRightLng": -75.767056
+				}
+			]
+	},
+	
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Pinecrest",
+		"number":    "129",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.351666,
+		"longitude": -75.786245,
+		"rampRects": [
+				{
+					"topLeftLat": 45.351323,
+					"topLeftLng": -75.789375,
+					"bottomRightLat": 45.351159,
+					"bottomRightLng": -75.787243
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Pinecrest",
+		"number":    "129",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.349951,
+		"longitude": -75.789415,
+		"rampRects": [
+				{
+					"topLeftLat": 45.351142,
+					"topLeftLng": -75.789544,
+					"bottomRightLat": 45.350388,
+					"bottomRightLng": -75.788632
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Pinecrest",
+		"number":    "129",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.348143,
+		"longitude": -75.792709,
+		"rampRects": [
+				{
+					"topLeftLat": 45.350634,
+					"topLeftLng": -75.79228,
+					"bottomRightLat": 45.348718,
+					"bottomRightLng": -75.791792
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Pinecrest",
+		"number":    "129",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.34666,
+		"longitude": -75.795187,
+		"rampRects": [
+				{
+					"topLeftLat": 45.347751,
+					"topLeftLng": -75.792722,
+					"bottomRightLat": 45.347651,
+					"bottomRightLng": -75.791416
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Pinecrest",
+		"number":    "129",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.349171,
+		"longitude": -75.790115,
+		"rampRects": [
+				{
+					"topLeftLat": 45.348637,
+					"topLeftLng": -75.791102,
+					"bottomRightLat": 45.347753,
+					"bottomRightLng": -75.790531
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Pinecrest",
+		"number":    "129",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.352098,
+		"longitude": -75.784799,
+		"rampRects": [
+				{
+					"topLeftLat": 45.349691,
+					"topLeftLng": -75.789115,
+					"bottomRightLat": 45.348579,
+					"bottomRightLng": -75.788455
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Bayshore",
+		"number":    "130",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.346109,
+		"longitude": -75.800466,
+		"rampRects": [
+				{
+					"topLeftLat": 45.347881,
+					"topLeftLng": -75.803454,
+					"bottomRightLat": 45.346223,
+					"bottomRightLng": -75.802354
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Bayshore",
+		"number":    "130",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.346943,
+		"longitude": -75.804886,
+		"rampRects": [
+				{
+					"topLeftLat": 45.345976,
+					"topLeftLng": -75.806809,
+					"bottomRightLat": 45.345634,
+					"bottomRightLng": -75.805836
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Bayshore",
+		"number":    "130",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.344537,
+		"longitude": -75.815213,
+		"rampRects": [
+				{
+					"topLeftLat": 45.344362,
+					"topLeftLng": -75.816771,
+					"bottomRightLat": 45.344051,
+					"bottomRightLng": -75.81569
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Bayshore",
+		"number":    "130",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.342441,
+		"longitude": -75.819225,
+		"rampRects": [
+				{
+					"topLeftLat": 45.342177,
+					"topLeftLng": -75.814016,
+					"bottomRightLat": 45.341951,
+					"bottomRightLng": -75.813126
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Bayshore",
+		"number":    "130",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.342441,
+		"longitude": -75.819225,
+		"rampRects": [
+				{
+					"topLeftLat": 45.345035,
+					"topLeftLng": -75.808711,
+					"bottomRightLat": 45.343772,
+					"bottomRightLng": -75.807102
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Bayshore",
+		"number":    "130",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.345631,
+		"longitude": -75.801839,
+		"rampRects": [
+				{
+					"topLeftLat": 45.345318,
+					"topLeftLng": -75.80549,
+					"bottomRightLat": 45.344756,
+					"bottomRightLng": -75.803373
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "ON-416",
+		"number":    "131",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.344809,
+		"longitude": -75.811104,
+		"rampRects": [
+				{
+					"topLeftLat": 45.342081,
+					"topLeftLng": -75.815706,
+					"bottomRightLat": 45.341078,
+					"bottomRightLng": -75.81532
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "ON-416",
+		"number":    "131",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.342999,
+		"longitude": -75.822551,
+		"rampRects": [
+				{
+					"topLeftLat": 45.343104,
+					"topLeftLng": -75.822937,
+					"bottomRightLat": 45.342629,
+					"bottomRightLng": -75.818667
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "ON-416",
+		"number":    "131",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.342245,
+		"longitude": -75.824139,
+		"rampRects": [
+				{
+					"topLeftLat": 45.341898,
+					"topLeftLng": -75.818689,
+					"bottomRightLat": 45.340774,
+					"bottomRightLng": -75.817037
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "ON-416",
+		"number":    "131",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.344439,
+		"longitude": -75.811028,
+		"rampRects": [
+				{
+					"topLeftLat": 45.343199,
+					"topLeftLng": -75.814295,
+					"bottomRightLat": 45.342158,
+					"bottomRightLng": -75.813147
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Moodie",
+		"number":    "134",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.340857,
+		"longitude": -75.835748,
+		"rampRects": [
+				{
+					"topLeftLat": 45.340695,
+					"topLeftLng": -75.839658,
+					"bottomRightLat": 45.340541,
+					"bottomRightLng": -75.836783
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Moodie",
+		"number":    "134",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.338825,
+		"longitude": -75.841171,
+		"rampRects": [
+				{
+					"topLeftLat": 45.340403,
+					"topLeftLng": -75.840788,
+					"bottomRightLat": 45.3394,
+					"bottomRightLng": -75.839672
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Moodie",
+		"number":    "134",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.336875,
+		"longitude": -75.845951,
+		"rampRects": [
+				{
+					"topLeftLat": 45.338819,
+					"topLeftLng": -75.84311,
+					"bottomRightLat": 45.338316,
+					"bottomRightLng": -75.842338
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Moodie",
+		"number":    "134",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.336104,
+		"longitude": -75.846592,
+		"rampRects": [
+				{
+					"topLeftLat": 45.336687,
+					"topLeftLng": -75.845098,
+					"bottomRightLat": 45.336347,
+					"bottomRightLng": -75.843054
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Moodie",
+		"number":    "134",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.338144,
+		"longitude": -75.841453,
+		"rampRects": [
+				{
+					"topLeftLat": 45.337456,
+					"topLeftLng": -75.843089,
+					"bottomRightLat": 45.336544,
+					"bottomRightLng": -75.842421
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Moodie",
+		"number":    "134",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.339605,
+		"longitude": -75.837722,
+		"rampRects": [
+				{
+					"topLeftLat": 45.338369,
+					"topLeftLng": -75.840812,
+					"bottomRightLat": 45.336615,
+					"bottomRightLng": -75.839138
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "March",
+		"number":    "138",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.322974,
+		"longitude": -75.88068,
+		"rampRects": [
+				{
+					"topLeftLat": 45.322959,
+					"topLeftLng": -75.886758,
+					"bottomRightLat": 45.322601,
+					"bottomRightLng": -75.881093
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "March",
+		"number":    "138",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.320949,
+		"longitude": -75.885208,
+		"rampRects": [
+				{
+					"topLeftLat": 45.32239,
+					"topLeftLng": -75.885959,
+					"bottomRightLat": 45.321326,
+					"bottomRightLng": -75.884398
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "March",
+		"number":    "138",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.318976,
+		"longitude": -75.8898,
+		"rampRects": [
+				{
+					"topLeftLat": 45.321258,
+					"topLeftLng": -75.887163,
+					"bottomRightLat": 45.320491,
+					"bottomRightLng": -75.88661
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "March",
+		"number":    "138",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.317784,
+		"longitude": -75.890486,
+		"rampRects": [
+				{
+					"topLeftLat": 45.318429,
+					"topLeftLng": -75.889403,
+					"bottomRightLat": 45.318237,
+					"bottomRightLng": -75.887391
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "March",
+		"number":    "138",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.32007,
+		"longitude": -75.885945,
+		"rampRects": [
+				{
+					"topLeftLat": 45.319436,
+					"topLeftLng": -75.887415,
+					"bottomRightLat": 45.318486,
+					"bottomRightLng": -75.88671
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "March",
+		"number":    "138",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.321669,
+		"longitude": -75.881935,
+		"rampRects": [
+				{
+					"topLeftLat": 45.320353,
+					"topLeftLng": -75.885154,
+					"bottomRightLat": 45.319408,
+					"bottomRightLng": -75.884475
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Terry Fox",
+		"number":    "140",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.308051,
+		"longitude": -75.908146,
+		"rampRects": [
+				{
+					"topLeftLat": 45.307761,
+					"topLeftLng": -75.910935,
+					"bottomRightLat": 45.307506,
+					"bottomRightLng": -75.908913
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Terry Fox",
+		"number":    "140",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.306131,
+		"longitude": -75.911332,
+		"rampRects": [
+				{
+					"topLeftLat": 45.307485,
+					"topLeftLng": -75.912239,
+					"bottomRightLat": 45.306485,
+					"bottomRightLng": -75.910689
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Terry Fox",
+		"number":    "140",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.303641,
+		"longitude": -75.917158,
+		"rampRects": [
+				{
+					"topLeftLat": 45.306661,
+					"topLeftLng": -75.914009,
+					"bottomRightLat": 45.305282,
+					"bottomRightLng": -75.913229
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Terry Fox",
+		"number":    "140",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.303124,
+		"longitude": -75.916992,
+		"rampRects": [
+				{
+					"topLeftLat": 45.303909,
+					"topLeftLng": -75.914859,
+					"bottomRightLat": 45.303624,
+					"bottomRightLng": -75.912673
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Terry Fox",
+		"number":    "140",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.305199,
+		"longitude": -75.911869,
+		"rampRects": [
+				{
+					"topLeftLat": 45.304733,
+					"topLeftLng": -75.912891,
+					"bottomRightLat": 45.303869,
+					"bottomRightLng": -75.912129
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Terry Fox",
+		"number":    "140",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.307866,
+		"longitude": -75.907092,
+		"rampRects": [
+				{
+					"topLeftLat": 45.305854,
+					"topLeftLng": -75.910383,
+					"bottomRightLat": 45.304697,
+					"bottomRightLng": -75.909573
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Palladium",
+		"number":    "142",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.296686,
+		"longitude": -75.933262,
+		"rampRects": [
+				{
+					"topLeftLat": 45.296686,
+					"topLeftLng": -75.933262,
+					"bottomRightLat": 45.29567,
+					"bottomRightLng": -75.934898
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Palladium",
+		"number":    "142",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.293854,
+		"longitude": -75.937637,
+		"rampRects": [
+				{
+					"topLeftLat": 45.295613,
+					"topLeftLng": -75.938031,
+					"bottomRightLat": 45.294507,
+					"bottomRightLng": -75.936695
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Palladium",
+		"number":    "142",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.290339,
+		"longitude": -75.942105,
+		"rampRects": [
+				{
+					"topLeftLat": 45.2914,
+					"topLeftLng": -75.940418,
+					"bottomRightLat": 45.291109,
+					"bottomRightLng": -75.938095
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Palladium",
+		"number":    "142",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.290339,
+		"longitude": -75.942105,
+		"rampRects": [
+				{
+					"topLeftLat": 45.29256,
+					"topLeftLng": -75.938573,
+					"bottomRightLat": 45.291441,
+					"bottomRightLng": -75.937589
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Palladium",
+		"number":    "142",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.295743,
+		"longitude": -75.933418,
+		"rampRects": [
+				{
+					"topLeftLat": 45.294113,
+					"topLeftLng": -75.935971,
+					"bottomRightLat": 45.29252,
+					"bottomRightLng": -75.935445
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "Carp",
+		"number":    "144",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.283878,
+		"longitude": -75.953446,
+		"rampRects": [
+				{
+					"topLeftLat": 45.283257,
+					"topLeftLng": -75.957059,
+					"bottomRightLat": 45.282883,
+					"bottomRightLng": -75.954972
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Carp",
+		"number":    "144",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.281532,
+		"longitude": -75.957115,
+		"rampRects": [
+				{
+					"topLeftLat": 45.282679,
+					"topLeftLng": -75.957099,
+					"bottomRightLat": 45.281943,
+					"bottomRightLng": -75.95641
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Carp",
+		"number":    "144",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.277701,
+		"longitude": -75.962005,
+		"rampRects": [
+				{
+					"topLeftLat": 45.279178,
+					"topLeftLng": -75.959462,
+					"bottomRightLat": 45.279071,
+					"bottomRightLng": -75.957727
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Carp",
+		"number":    "144",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.280666,
+		"longitude": -75.957445,
+		"rampRects": [
+				{
+					"topLeftLat": 45.28016,
+					"topLeftLng": -75.958225,
+					"bottomRightLat": 45.279194,
+					"bottomRightLng": -75.95701
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "Carp",
+		"number":    "144",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.283372,
+		"longitude": -75.95303,
+		"rampRects": [
+				{
+					"topLeftLat": 45.281485,
+					"topLeftLng": -75.955954,
+					"bottomRightLat": 45.280254,
+					"bottomRightLng": -75.955138
+				}
+			]
+	},
+	
+	
+	
+	{
+		"highway":   "ON-417",
+		"name":      "ON-7",
+		"number":    "145",
+		"direction": "asc",
+		"type":      "offramp",
+		"latitude":  45.276691,
+		"longitude": -75.964901,
+		"rampRects": [
+				{
+					"topLeftLat": 45.275913,
+					"topLeftLng": -75.970738,
+					"bottomRightLat": 45.274871,
+					"bottomRightLng": -75.967702
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "ON-7",
+		"number":    "145",
+		"direction": "asc",
+		"type":      "onramp",
+		"latitude":  45.272757,
+		"longitude": -75.971768,
+		"rampRects": [
+				{
+					"topLeftLat": 45.274696,
+					"topLeftLng": -75.971009,
+					"bottomRightLat": 45.273573,
+					"bottomRightLng": -75.969713
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "ON-7",
+		"number":    "145",
+		"direction": "desc",
+		"type":      "offramp",
+		"latitude":  45.271878,
+		"longitude": -75.981011,
+		"rampRects": [
+				{
+					"topLeftLat": 45.271353,
+					"topLeftLng": -75.977991,
+					"bottomRightLat": 45.26868,
+					"bottomRightLng": -75.975051
+				}
+			]
+	},
+	{
+		"highway":   "ON-417",
+		"name":      "ON-7",
+		"number":    "145",
+		"direction": "desc",
+		"type":      "onramp",
+		"latitude":  45.27352,
+		"longitude": -75.968584,
+		"rampRects": [
+				{
+					"topLeftLat": 45.271428,
+					"topLeftLng": -75.973485,
+					"bottomRightLat": 45.268816,
+					"bottomRightLng": -75.970287
+				}
+			]
+	}
+]

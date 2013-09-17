@@ -1,0 +1,1113 @@
+diff --git a/Classes/Controllers/DirectionsViewController.m b/Classes/Controllers/DirectionsViewController.m
+index 117abc9..e5c3284 100644
+--- a/Classes/Controllers/DirectionsViewController.m
++++ b/Classes/Controllers/DirectionsViewController.m
+@@ -235,7 +235,7 @@
+ 	//[self directionsFrom:@"1840 D'amour Cres" to:@"165 Wellington, Gatineau"];
+ 	GoogleDirectionsDataParser *gDirParser = [[GoogleDirectionsDataParser alloc] init];
+ 	gDirParser.delegate = self;
+-	[gDirParser fetchDataFromResource:@"hwy-walkley-split" ofType:@"xml"];
++	[gDirParser fetchDataFromResource:@"hwy-walkley-vanier" ofType:@"xml"];
+ 	// TEMP TEMP TEMP
+ }
+ 
+diff --git a/Classes/Data/Utility/HighwayDetourLoader.h b/Classes/Data/Utility/HighwayDetourLoader.h
+index 4161636..bf96849 100644
+--- a/Classes/Data/Utility/HighwayDetourLoader.h
++++ b/Classes/Data/Utility/HighwayDetourLoader.h
+@@ -11,14 +11,14 @@
+ 
+ 
+ @interface HighwayDetourLoader : NSObject<DataParserDelegate> {
+-	NSMutableArray *endPoints;
+-	NSMutableArray *routes;
++	NSMutableArray		*endPoints;
++	NSMutableDictionary *partialRoutes;
+ 	
+ 	NSManagedObjectContext *context;
+ }
+ 
+ @property (nonatomic, readonly) NSMutableArray *endPoints;
+-@property (nonatomic, readonly) NSMutableArray *routes;
++@property (nonatomic, readonly) NSMutableDictionary *partialRoutes;
+ @property (nonatomic, readonly) NSManagedObjectContext *context;
+ 
+ - (void)loadFromURL:(NSURL*)url intoContext:(NSManagedObjectContext*)dbContext;
+diff --git a/Classes/Data/Utility/HighwayDetourLoader.m b/Classes/Data/Utility/HighwayDetourLoader.m
+index bbaa8eb..7914705 100644
+--- a/Classes/Data/Utility/HighwayDetourLoader.m
++++ b/Classes/Data/Utility/HighwayDetourLoader.m
+@@ -18,7 +18,7 @@
+ #import "GenericParserErrorAlert.h"
+ 
+ @interface HighwayDetourLoader (private)
+-- (void)queueRouteCalculationFromOffRamp:(HighwayRamp*)offRamp toOnRamp:(HighwayRamp*)onRamp;
++- (void)queueRouteCalculationFromRamp:(HighwayRamp*)startRamp toRamp:(HighwayRamp*)endRamp;
+ - (void)processRouteCalculations;
+ - (void)didFinishCalculatingRoutes;
+ @end
+@@ -29,12 +29,12 @@
+ @synthesize mapView;
+ @synthesize context;
+ 
+-@synthesize endPoints, routes;
++@synthesize endPoints, partialRoutes;
+ 
+ - (id)init {
+ 	if (self = [super init]) {
+ 		endPoints = [NSMutableArray new];
+-		routes = [NSMutableArray new];
++		partialRoutes = [NSMutableDictionary new];
+ 	}
+ 	return self;
+ }
+@@ -73,6 +73,8 @@
+ 			
+ 			HighwayRamp *offRamp = [directionResults objectAtIndex:offRampIndex];
+ 			
++			// For now we just want the routes that detours to the highway (avoiding)
++			// So, only offramps to onramps
+ 			if ([offRamp.type caseInsensitiveCompare:@"offramp"] != NSOrderedSame) {
+ 				continue;
+ 			}
+@@ -81,14 +83,17 @@
+ 			for (int onRampIndex = offRampIndex + 1; onRampIndex < [directionResults count]; onRampIndex++) {
+ 				HighwayRamp *onRamp = [directionResults objectAtIndex:onRampIndex];
+ 				
+-				if ([onRamp.type caseInsensitiveCompare:@"offramp"] != NSOrderedSame || 
+-					[onRamp.number caseInsensitiveCompare:offRamp.number] == NSOrderedSame) 
++				if ([onRamp.type caseInsensitiveCompare:offRamp.type] == NSOrderedSame 
++					// TODO:We want to allow the off and on at the same exit in case they place two pins
++					//   on the same exit.  We don't have time to tweak the UI to avoid this right now.
++					// || [onRamp.number caseInsensitiveCompare:offRamp.number] == NSOrderedSame
++					) 
+ 				{
+ 					continue;
+ 				}
+ 				
+-				// Queue this onramp/offramp combo to have the best route calculcated
+-				[self queueRouteCalculationFromOffRamp:offRamp toOnRamp:onRamp];
++				// Queue this onramp/offramp combo to have the best route calculated
++				[self queueRouteCalculationFromRamp:offRamp toRamp:onRamp];
+ 			}
+ 		}
+ 	}
+@@ -96,12 +101,12 @@
+ 	[self performSelectorOnMainThread:@selector(processRouteCalculations) withObject:nil waitUntilDone:NO];
+ }
+ 
+-- (void)queueRouteCalculationFromOffRamp:(HighwayRamp*)offRamp toOnRamp:(HighwayRamp*)onRamp {
++- (void)queueRouteCalculationFromRamp:(HighwayRamp*)startRamp toRamp:(HighwayRamp*)endRamp {
+ 	// Just add it to a stack
+ 	@synchronized(endPoints) {
+ 		[endPoints addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+-							  offRamp, @"startRamp", 
+-							  onRamp, @"endRamp", nil]];
++							  startRamp, @"startRamp", 
++							  endRamp, @"endRamp", nil]];
+ 	}
+ }
+ 
+@@ -110,8 +115,7 @@
+ 	NSDictionary *currentEndPoints = nil;
+ 	@synchronized(endPoints) {
+ 		if ([endPoints count] == 0) {
+-			// TODO: *** PERSIST THE ROUTES TO THE METADATA DATABASE ***
+-			NSLog(@"Finished fetching %d routes between each highway on/off ramp", [routes count]);
++			NSLog(@"Finished fetching %d routes between each highway on/off ramp", [partialRoutes count]);
+ 			
+ 			[self didFinishCalculatingRoutes];
+ 			
+@@ -129,7 +133,11 @@
+ 	HighwayRamp	*endRamp = [currentEndPoints objectForKey:@"endRamp"];
+ 	NSString *origin = [NSString stringWithFormat:@"%@,%@", startRamp.latitude, startRamp.longitude];
+ 	NSString *destination = [NSString stringWithFormat:@"%@,%@", endRamp.latitude, endRamp.longitude];
+-	[parser fetchDataForOrigin:origin destination:destination avoidHighways:YES];
++	
++	// Avoid highways if the first ramp is an off ramp (ie. offramp to onramp), otherwise, we're
++	// routing the path on the highway
++	BOOL avoidHighways = ([startRamp.type caseInsensitiveCompare:@"offramp"] == NSOrderedSame);
++	[parser fetchDataForOrigin:origin destination:destination avoidHighways:avoidHighways];
+ 	
+ 	[currentEndPoints release];
+ }
+@@ -137,7 +145,8 @@
+ - (void)didFinishCalculatingRoutes {
+ 	
+ 	// Save the routes
+-	for (NSDictionary *route in routes) {
++	for (NSString *routeKey in partialRoutes) {
++		NSDictionary *route = [partialRoutes valueForKey:routeKey];
+ 		HighwayDetour *detour = [NSEntityDescription insertNewObjectForEntityForName:@"HighwayDetour" 
+ 															  inManagedObjectContext:context];
+ 		detour.startRamp = [route objectForKey:@"startRamp"];
+@@ -145,14 +154,18 @@
+ 		detour.duration = 0;
+ 		detour.distance = 0;
+ 		
++		NSLog(@"SAVING PARTIAL ROUTE: %@:%@ (%@) -> %@:%@ (%@)",
++			  detour.startRamp.number, detour.startRamp.name, detour.startRamp.type,
++			  detour.endRamp.number, detour.endRamp.name, detour.endRamp.type, nil);
++		
+ 		GoogleRoute *gRoute = [route objectForKey:@"route"];
+ 		detour.polyline = gRoute.overviewPolylineEncoded;
++		int pointOrder = 0;
+ 		for (GoogleRouteLeg *gLeg in gRoute.legs) {
+ 			detour.duration = [NSNumber numberWithInt: [detour.duration intValue] + gLeg.duration];
+ 			detour.distance = [NSNumber numberWithInt: [detour.distance intValue] + gLeg.distance];
+ 			
+ 			for (GoogleRouteStep *gStep in gLeg.steps) {
+-				int pointOrder = 0;
+ 				for (int pointIndex = 0; pointIndex < gStep.polyline.pointCount; pointIndex++) {
+ 					MKMapPoint mapPoint = gStep.polyline.points[pointIndex];
+ 					CLLocationCoordinate2D coord = MKCoordinateForMapPoint(mapPoint);
+@@ -191,12 +204,38 @@
+ 
+ 	HighwayRamp *newStartRamp = [gParser.context objectForKey:@"startRamp"];
+ 	HighwayRamp *newEndRamp = [gParser.context objectForKey:@"endRamp"];
++	NSString *offOrOn = ([newStartRamp.type caseInsensitiveCompare:@"offramp"] == NSOrderedSame ?
++						 @"off" : @"on");
++	NSString *key = [NSString stringWithFormat:@"%@,%@,%@", newStartRamp.number, newEndRamp.number, offOrOn];
+ 	
+-	@synchronized(routes) {
+-		if ([routes count] > 0) {
++	@synchronized(partialRoutes) {
++		NSDictionary *otherRouteDict = [partialRoutes valueForKey:key];
++		BOOL newRouteIsBetter = NO;
++		
++		if (otherRouteDict != nil) {
++			int otherRouteDuration = 0;
++			GoogleRoute *otherRoute = [otherRouteDict objectForKey:@"route"];
++			for (GoogleRouteLeg *leg in otherRoute.legs) {
++				otherRouteDuration += leg.duration;
++			}
++			if (otherRouteDuration > newRouteDuration) {
++				newRouteIsBetter = YES;
++			}			
++		}
++		
++		if (otherRouteDict == nil || newRouteIsBetter) {
++			[partialRoutes setValue:[NSDictionary dictionaryWithObjectsAndKeys:
++									 newRoute, @"route",
++									 newStartRamp, @"startRamp",
++									 newEndRamp, @"endRamp", nil]
++							 forKey:key];
++		}
++		
++		
++		/*if ([partialRoutes count] > 0) {
+ 			// If the last calculated ramp is for the same exits as this new one, then
+ 			// keep only the route with the shortest duration.
+-			NSDictionary *dict = [routes lastObject];
++			NSDictionary *dict = [partialRoutes lastObject];
+ 			HighwayRamp *lastStartRamp = [dict objectForKey:@"startRamp"];
+ 			HighwayRamp *lastEndRamp = [dict objectForKey:@"endRamp"];
+ 			if ([lastStartRamp isForSameExitAsRamp:newStartRamp] &&
+@@ -208,16 +247,19 @@
+ 					lastRouteDuration += leg.duration;
+ 				}
+ 				if (lastRouteDuration > newRouteDuration) {
+-					[routes removeLastObject];
++					[partialRoutes removeLastObject];
+ 				}
+ 			}
+ 		
+ 		}
+-			
+-		[routes addObject:[NSDictionary dictionaryWithObjectsAndKeys:
++		// Add the route to an array to be processed once they are all in
++		NSString *key = [NSString stringWithFormat:@"%@,%@", newStartRamp.number, newEndRamp.number];
++		[partialRoutes setValue:<#(id)value#> forKey:key];];
++		
++		[partialRoutes addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+ 						   newRoute, @"route",
+ 						   newStartRamp, @"startRamp",
+-						   newEndRamp, @"endRamp", nil]];
++						   newEndRamp, @"endRamp", nil]];*/
+ 	}
+ 	
+ 	// Process the next route but pause for 0.5 seconds so that we don't hammer google too hard
+@@ -248,7 +290,7 @@
+ -(void) dealloc {
+ 	[context release];
+ 	[endPoints release];
+-	[routes release];
++	[partialRoutes release];
+ 	
+ 	[super dealloc];
+ }
+diff --git a/Classes/Network/Parsers/GoogleDirectionsDataParser.m b/Classes/Network/Parsers/GoogleDirectionsDataParser.m
+index 5802c9b..9ee1b36 100644
+--- a/Classes/Network/Parsers/GoogleDirectionsDataParser.m
++++ b/Classes/Network/Parsers/GoogleDirectionsDataParser.m
+@@ -37,6 +37,7 @@
+ 	self.sourceUrl = [NSURL URLWithString:urlString];
+ 	
+ 	NSLog(@"GoogleDirections> URL Requested: %@", [self.sourceUrl absoluteString]);
++	NSLog(@"                  Google Maps: from:%@ to:%@", origin, destination);
+ 	
+ 	[super sendRequest];
+ }
+diff --git a/Classes/Routing/HighwayDetourRouter.h b/Classes/Routing/HighwayDetourRouter.h
+index 57dc894..af82c71 100644
+--- a/Classes/Routing/HighwayDetourRouter.h
++++ b/Classes/Routing/HighwayDetourRouter.h
+@@ -37,6 +37,8 @@
+ 	NSMutableDictionary		*accessedRamps;		// Key is the highway name, objects are arrays of HighwayRamp instances
+ 	
+ 	// Used for routing alternatives
++	BOOL					 avoidEntireHighway;		// This is a temp solution for detecting when we need to avoid an entire high
++														// TODO: It will have to be re-evaluated when we add multi highway support
+ 	NSMutableArray			*detourRouteLegs;			// Array of DetourRoute for each leg of the final route
+ 														// This also includes duplicate legs that need to be compared
+ 	NSMutableArray			*detourRoutesInProgress;	// Array of DetourRoute objects that are currently being routed
+diff --git a/Classes/Routing/HighwayDetourRouter.m b/Classes/Routing/HighwayDetourRouter.m
+index d594be3..23bfa2e 100644
+--- a/Classes/Routing/HighwayDetourRouter.m
++++ b/Classes/Routing/HighwayDetourRouter.m
+@@ -148,7 +148,7 @@
+ 		}	
+ 	}
+ 	
+-	// TEMP log the used exits
++	// log the used exits
+ 	for (NSString *highwayName in accessedRamps) {
+ 		NSArray *matchedRects = [accessedRamps valueForKey:highwayName];
+ 		for (HighwayRamp *ramp in matchedRects) {
+@@ -159,6 +159,7 @@
+ 
+ - (void)detectIntersectionWithRedZones {
+ 	// Detect if the route intersects any red zones
++	avoidEntireHighway = NO;
+ 	self.detourPoints = [NSMutableArray array];
+ 	for (NSString *highwayName in self.redZones) {
+ 		
+@@ -190,6 +191,7 @@
+ 		if ([routeOnRamp.number caseInsensitiveCompare:lowRedZoneExit.number] != NSOrderedAscending &&
+ 			[routeOffRamp.number caseInsensitiveCompare:highRedZoneExit.number] != NSOrderedDescending) 
+ 		{
++			avoidEntireHighway = YES;
+ 			continue;
+ 		}
+ 		/*
+@@ -208,15 +210,15 @@
+ 				[routeOffRamp.number caseInsensitiveCompare:highRedZoneExit.number] == NSOrderedDescending)
+ 			{
+ 				// TODO: this could be merged with the same block
+-				[self.detourPoints addObject: [self findOfframpsAtExit:routeOnRamp.number type:kRAMPTYPE_ONRAMP direction:travelDirection]];
++				//[self.detourPoints addObject: [self findOfframpsAtExit:routeOnRamp.number type:kRAMPTYPE_ONRAMP direction:travelDirection]];
+ 				[self.detourPoints addObject: [self findOfframpsAtExit:lowRedZoneExit.number type:kRAMPTYPE_OFFRAMP direction:travelDirection]];
+ 				[self.detourPoints addObject: [self findOfframpsAtExit:highRedZoneExit.number type:kRAMPTYPE_ONRAMP direction:travelDirection]];
+-				[self.detourPoints addObject: [self findOfframpsAtExit:routeOffRamp.number type:kRAMPTYPE_OFFRAMP direction:travelDirection]];
++				//[self.detourPoints addObject: [self findOfframpsAtExit:routeOffRamp.number type:kRAMPTYPE_OFFRAMP direction:travelDirection]];
+ 			}
+ 			else {
+ 			
+ 				// Partial coverage, either the on-ramp or the off-ramp is within the red zone
+-				if ([routeOnRamp.number caseInsensitiveCompare:lowRedZoneExit.number] == NSOrderedAscending) {
++				/*if ([routeOnRamp.number caseInsensitiveCompare:lowRedZoneExit.number] == NSOrderedAscending) {
+ 					[self.detourPoints addObject: [self findOfframpsAtExit:routeOnRamp.number type:kRAMPTYPE_ONRAMP direction:travelDirection]];
+ 				}
+ 				else {
+@@ -228,7 +230,15 @@
+ 				}
+ 				else {
+ 					[self.detourPoints addObject: [self findOfframpsAtExit:lowRedZoneExit.number type:kRAMPTYPE_OFFRAMP direction:travelDirection]];
++				}*/
++				
++				if ([routeOnRamp.number caseInsensitiveCompare:lowRedZoneExit.number] == NSOrderedAscending) {
++					[self.detourPoints addObject: [self findOfframpsAtExit:lowRedZoneExit.number type:kRAMPTYPE_OFFRAMP direction:travelDirection]];
+ 				}
++				else {
++					[self.detourPoints addObject: [self findOfframpsAtExit:highRedZoneExit.number type:kRAMPTYPE_ONRAMP direction:travelDirection]];
++				}
++
+ 			}
+ 		}
+ 	}
+@@ -277,50 +287,56 @@
+ }
+ 
+ - (void)buildDetourRoute {
+-	if ([self.detourPoints count] == 0) {
+-		return;
+-	}
+ 	
+ 	didQueueAllRouteRequests = NO;
+-	
+-	// Request the full route avoiding highways completely
+-	[self requestRouteFromOrigin:startPosition toDestination:endPosition step:[NSNumber numberWithInt:0] avoidHighways:YES];
+-	
+-	// Build the route from the route origin to the first detour point
+-	int step = 1;
+-	for (HighwayRamp *ramp in (NSArray*)[self.detourPoints objectAtIndex:0]) {
+-		CLLocationCoordinate2D rampPosition = CLLocationCoordinate2DMake([ramp.latitude doubleValue], [ramp.longitude doubleValue]);
+-		// TODO: consider the situation where the start position is on the highway!
+-		[self requestRouteFromOrigin:startPosition toDestination:rampPosition step:[NSNumber numberWithInt:step] avoidHighways:NO];
++
++	if ([self.detourPoints count] == 0) 
++	{
++		[self requestRouteFromOrigin:startPosition 
++					   toDestination:endPosition 
++								step:[NSNumber numberWithInt:0] 
++					   avoidHighways:avoidEntireHighway];
+ 	}
+-	step++;
+-	
+-	// Build the route between each detour point
+-	id lastDetourPoint = nil;
+-	for (NSArray *detourPoint in self.detourPoints) {
+-		if (lastDetourPoint == nil) {
++	else {
++		// Request the full route avoiding highways completely.. this might be quicker than the detour
++		[self requestRouteFromOrigin:startPosition toDestination:endPosition step:[NSNumber numberWithInt:0] avoidHighways:YES];
++		
++		// Build the route from the route origin to the first detour point
++		int step = 1;
++		for (HighwayRamp *ramp in (NSArray*)[self.detourPoints objectAtIndex:0]) {
++			CLLocationCoordinate2D rampPosition = CLLocationCoordinate2DMake([ramp.latitude doubleValue], [ramp.longitude doubleValue]);
++			// TODO: consider the situation where the start position is on the highway!
++			[self requestRouteFromOrigin:startPosition toDestination:rampPosition step:[NSNumber numberWithInt:step] avoidHighways:NO];
++		}
++		step++;
++		
++		// Build the route between each detour point
++		id lastDetourPoint = nil;
++		for (NSArray *detourPoint in self.detourPoints) {
++			if (lastDetourPoint == nil) {
++				lastDetourPoint = detourPoint;
++				continue;
++			}
++			
++			// Each detour point is an array since there could be more than on on/off ramp for the same exit.  
++			// Since we're pulling these routes from a cache (DB) we already know the optimal route between the two
++			// exits and so we know which on/off ramp is the one to use in this case. So we just pull out the first
++			// object in each array, the core data query will figure it out.
++			HighwayRamp *ramp1 = (HighwayRamp*)[lastDetourPoint objectAtIndex:0];
++			HighwayRamp *ramp2 = (HighwayRamp*)[detourPoint objectAtIndex:0];
++			[self requestCachedRouteFromRamp:ramp1 toRamp:ramp2 step:[NSNumber numberWithInt:step]];
+ 			lastDetourPoint = detourPoint;
+-			continue;
++			step++;
+ 		}
+ 		
+-		// Each detour point is an array since there could be more than on on/off ramp for the same exit.  
+-		// Since we're pulling these routes from a cache (DB) we already know the optimal route between the two
+-		// exits and so we know which on/off ramp is the one to use in this case. So we just pull out the first
+-		// object in each array, the core data query will figure it out.
+-		HighwayRamp *ramp1 = (HighwayRamp*)[lastDetourPoint objectAtIndex:0];
+-		HighwayRamp *ramp2 = (HighwayRamp*)[detourPoint objectAtIndex:0];
+-		[self requestCachedRouteFromRamp:ramp1 toRamp:ramp2 step:[NSNumber numberWithInt:step]];
+-		lastDetourPoint = detourPoint;
+-		step++;
+-	}
+-	
+-	// Build the route from the last detour point to the route destination
+-	for (HighwayRamp *ramp in (NSArray*)[self.detourPoints lastObject]) {
+-		CLLocationCoordinate2D rampPosition = CLLocationCoordinate2DMake([ramp.latitude doubleValue], [ramp.longitude doubleValue]);
+-		// TODO: consider the situation where the end position is on the highway!
+-		[self requestRouteFromOrigin:rampPosition toDestination:endPosition step:[NSNumber numberWithInt:step] avoidHighways:YES];
++		// Build the route from the last detour point to the route destination
++		for (HighwayRamp *ramp in (NSArray*)[self.detourPoints lastObject]) {
++			CLLocationCoordinate2D rampPosition = CLLocationCoordinate2DMake([ramp.latitude doubleValue], [ramp.longitude doubleValue]);
++			// TODO: consider the situation where the end position is on the highway!
++			[self requestRouteFromOrigin:rampPosition toDestination:endPosition step:[NSNumber numberWithInt:step] avoidHighways:YES];
++		}
++		step++;	
+ 	}
+-	step++;	
+ 	
+ 	didQueueAllRouteRequests = YES;
+ 	
+@@ -374,10 +390,32 @@
+ 	NSString *direction = ([startRamp.number caseInsensitiveCompare:endRamp.number] == NSOrderedAscending ?
+ 						   @"asc" : @"desc");
+ 	
++	// Fetch all possible routes
++	NSFetchRequest *rampRequest = [NSFetchRequest new];
++	[rampRequest setEntity:[NSEntityDescription entityForName:@"HighwayDetour" inManagedObjectContext:context]];
++	[rampRequest setPredicate:[NSPredicate predicateWithFormat:
++							   @"startRamp.highway.name = %@ AND "
++							    "startRamp.number = %@ AND "
++							    "startRamp.direction = %@ AND "
++							    "startRamp.type = 'offramp' AND "
++							    "endRamp.highway.name = %@ AND "
++							    "endRamp.number = %@ AND "
++							    "endRamp.direction = %@ AND "
++							    "endRamp.type = 'onramp'",
++							   startRamp.highway.name, startRamp.number, direction,
++							   endRamp.highway.name, endRamp.number, direction,nil]];
++	[rampRequest setFetchLimit:1];
++	[rampRequest setSortDescriptors:[NSArray arrayWithObject:
++									 [NSSortDescriptor sortDescriptorWithKey:@"duration" ascending:YES]]];
++	NSError *error = nil;
++	NSArray *results = [context executeFetchRequest:rampRequest error:&error];
++	// TODO: handle errors
++	[rampRequest release];
++	
+ 	// Just fetch the route from the database
+-	NSFetchRequest *request = [NSFetchRequest new];
+-	[request setEntity:[NSEntityDescription entityForName:@"HighwayDetourPoint" inManagedObjectContext:context]];
+-	[request setPredicate:[NSPredicate predicateWithFormat:
++/*	NSFetchRequest *pointRequest = [NSFetchRequest new];
++	[pointRequest setEntity:[NSEntityDescription entityForName:@"HighwayDetourPoint" inManagedObjectContext:context]];
++	[pointRequest setPredicate:[NSPredicate predicateWithFormat:
+ 						   @"detour.startRamp.highway.name = %@ AND "
+ 						    "detour.startRamp.number = %@ AND "
+ 						    "detour.startRamp.direction = %@ AND "
+@@ -385,29 +423,36 @@
+ 						    "detour.endRamp.number = %@ AND "
+ 						    "detour.endRamp.direction = %@",
+ 						   startRamp.highway.name, startRamp.number, direction,
+-						   endRamp.highway.name, startRamp.number, direction, nil]];
+-	[request setSortDescriptors:[NSArray arrayWithObject:
++						   endRamp.highway.name, endRamp.number, direction, nil]];
++	[pointRequest setSortDescriptors:[NSArray arrayWithObject:
+ 								 [NSSortDescriptor sortDescriptorWithKey:@"order" ascending:YES]]];
+ 	NSError *error = nil;
+-	NSArray *results = [context executeFetchRequest:request error:&error];
++	NSArray *results = [context executeFetchRequest:pointRequest error:&error];
+ 	// TODO: handle errors!
+-	[request release];
++	[pointRequest release];*/
+ 	
+ 	// Add the request to the array 
+-	CLLocationCoordinate2D *coords = malloc([results count] * sizeof(CLLocationCoordinate2D));
+-	for (int i=0; i < [results count]; i++) {
+-		HighwayDetourPoint *detourPoint = [results objectAtIndex:i];
++	if ([results count] == 0) {
++		NSLog(@"ERROR - Could not find a cached route between exits in the database.");
++		return;
++	}
++	HighwayDetour *detour = [results objectAtIndex:0];
++	NSArray *points = [detour.steps sortedArrayUsingDescriptors:[NSArray arrayWithObject:
++					   [NSSortDescriptor sortDescriptorWithKey:@"order" ascending:YES]]];
++	CLLocationCoordinate2D *coords = malloc([points count] * sizeof(CLLocationCoordinate2D));
++	for (int i=0; i < [points count]; i++) {
++		HighwayDetourPoint *detourPoint = [points objectAtIndex:i];
+ 		coords[i] = CLLocationCoordinate2DMake([detourPoint.latitude doubleValue], [detourPoint.longitude doubleValue]);
+ 	}
+ 	RouteRequest *routeRequest = [self addRouteRequestsForOrigin:coords[0] 
+-													 destination:coords[[results count]-1]
++													 destination:coords[[points count]-1]
+ 															step:step];
+-	if ([results count] > 0) {
+-		HighwayDetourPoint *firstPoint = [results objectAtIndex:0];
++	if ([points count] > 0) {
++		HighwayDetourPoint *firstPoint = [points objectAtIndex:0];
+ 		routeRequest.duration = [firstPoint.detour.duration intValue];
+ 		routeRequest.distance = [firstPoint.detour.distance intValue];
+ 	}
+-	routeRequest.polyline = [MKPolyline polylineWithCoordinates:coords count:[results count]];
++	routeRequest.polyline = [MKPolyline polylineWithCoordinates:coords count:[points count]];
+ 	free(coords);
+ }
+ 
+@@ -449,7 +494,17 @@
+ 	
+ 	self.finalRoute = [BasicRoute new];
+ 	[self.finalRoute release]; // retained by the property
+-	if (avoidAllRoute.duration < duration) {
++	//
++	//
++	//
++	//
++	//  DONT COMMIT THIS!
++	//
++	//
++	//
++	//
++	//
++	if ([steps count] == 0 || avoidAllRoute.duration < duration) {
+ 		// Avoiding the highways completely is more efficient
+ 		self.finalRoute.polyline = avoidAllRoute.polyline;
+ 		self.finalRoute.duration = avoidAllRoute.duration;
+diff --git a/DataUtility-Info.plist b/DataUtility-Info.plist
+index 78c1cc7..78d6918 100644
+--- a/DataUtility-Info.plist
++++ b/DataUtility-Info.plist
+@@ -7,7 +7,7 @@
+ 	<key>CFBundleExecutable</key>
+ 	<string>${EXECUTABLE_NAME}</string>
+ 	<key>CFBundleIdentifier</key>
+-	<string>com.yourcompany.${PRODUCT_NAME:identifier}</string>
++	<string>net.cyberdream.${PRODUCT_NAME:identifier}</string>
+ 	<key>CFBundleInfoDictionaryVersion</key>
+ 	<string>6.0</string>
+ 	<key>CFBundlePackageType</key>
+diff --git a/Resources/HighwayRamps.short.json b/Resources/HighwayRamps.short.json
+new file mode 100644
+index 0000000..d3b2ac0
+--- /dev/null
++++ b/Resources/HighwayRamps.short.json
+@@ -0,0 +1,257 @@
++[
++	{
++		"highway":   "ON-417",
++		"name":      "Anderson",
++		"number":    "104",
++		"direction": "asc",
++		"type":      "onramp",
++		"latitude":  45.36965,
++		"longitude": -75.538924,
++		"rampRects": [
++				{
++					"topLeftLat": 45.370434,
++					"topLeftLng": -75.53901,
++					"bottomRightLat": 45.369552,
++					"bottomRightLng": -75.537368
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Anderson",
++		"number":    "104",
++		"direction": "asc",
++		"type":      "offramp",
++		"latitude":  45.369016, 
++		"longitude": -75.535512,
++		"rampRects": [
++				{
++					"topLeftLat": 45.370434,
++					"topLeftLng": -75.537293,
++					"bottomRightLat": 45.36928,
++					"bottomRightLng": -75.53578
++				},
++				{
++					"topLeftLat": 45.369295,
++					"topLeftLng": -75.535887,
++					"bottomRightLat": 45.369032,
++					"bottomRightLng": -75.535265
++				},
++				{
++					"topLeftLat": 45.369333,
++					"topLeftLng": -75.536349,
++					"bottomRightLat": 45.369084,
++					"bottomRightLng": -75.535877
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Anderson",
++		"number":    "104",
++		"direction": "desc",
++		"type":      "offramp",
++		"latitude":  45.369446,
++		"longitude": -75.542797,
++		"rampRects": [
++				{
++					"topLeftLat": 45.369207,
++					"topLeftLng": -75.542672,
++					"bottomRightLat": 45.368127,
++					"bottomRightLng": -75.541027
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Anderson",
++		"number":    "104",
++		"direction": "desc",
++		"type":      "onramp",
++		"latitude":  45.368805,
++		"longitude": -75.538446,
++		"rampRects": [
++				{
++					"topLeftLat": 45.368896,
++					"topLeftLng": -75.540758,
++					"bottomRightLat": 45.36781,
++					"bottomRightLng": -75.539231
++				}
++			]
++	},
++	
++	
++	
++	{
++		"highway":   "ON-417",
++		"name":      "Walkley",
++		"number":    "110",
++		"direction": "asc",
++		"type":      "onramp",
++		"latitude":  45.398051,
++		"longitude": -75.592477,
++		"rampRects": [
++				{
++					"topLeftLat": 45.397373,
++					"topLeftLng": -75.592343,
++					"bottomRightLat": 45.396981,
++					"bottomRightLng": -75.590873
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Walkley",
++		"number":    "110",
++		"direction": "asc",
++		"type":      "onramp",
++		"latitude":  45.401433,
++		"longitude": -75.593453,
++		"rampRects": [
++				{
++					"topLeftLat": 45.400778,
++					"topLeftLng": -75.592618,
++					"bottomRightLat": 45.399162,
++					"bottomRightLng": -75.590331
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Walkley",
++		"number":    "110",
++		"direction": "asc",
++		"type":      "offramp",
++		"latitude":  45.393726,
++		"longitude": -75.591924,
++		"rampRects": [
++				{
++					"topLeftLat": 45.396921,
++					"topLeftLng": -75.592096,
++					"bottomRightLat": 45.395188,
++					"bottomRightLng": -75.590454
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Walkley",
++		"number":    "110",
++		"direction": "desc",
++		"type":      "offramp",
++		"latitude":  45.401234,
++		"longitude": -75.594408,
++		"rampRects": [
++				{
++					"topLeftLat": 45.400665,
++					"topLeftLng": -75.595561,
++					"bottomRightLat": 45.399256,
++					"bottomRightLng": -75.594159
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Walkley",
++		"number":    "110",
++		"direction": "desc",
++		"type":      "onramp",
++		"latitude":  45.398463,
++		"longitude": -75.593241,
++		"rampRects": [
++				{
++					"topLeftLat": 45.399241,
++					"topLeftLng": -75.594896,
++					"bottomRightLat": 45.398616,
++					"bottomRightLng": -75.593512
++				}
++			]
++	},
++	
++	
++	{
++		"highway":   "ON-417",
++		"name":      "Innes",
++		"number":    "112",
++		"direction": "asc",
++		"type":      "offramp",
++		"latitude":  45.413153,
++		"longitude": -75.605378,
++		"rampRects": [
++				{
++					"topLeftLat": 45.41423,
++					"topLeftLng": -75.607063,
++					"bottomRightLat": 45.413342,
++					"bottomRightLng": -75.605335
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Innes",
++		"number":    "112",
++		"direction": "asc",
++		"type":      "onramp",
++		"latitude":  45.413635,
++		"longitude": -75.608211,
++		"rampRects": [
++				{
++					"topLeftLat": 45.414148,
++					"topLeftLng": -75.60806,
++					"bottomRightLat": 45.4135,
++					"bottomRightLng": -75.607181
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Innes",
++		"number":    "112",
++		"direction": "asc",
++		"type":      "onramp",
++		"latitude":  45.415292,
++		"longitude": -75.611376,
++		"rampRects": [
++				{
++					"topLeftLat": 45.4151,
++					"topLeftLng": -75.610791,
++					"bottomRightLat": 45.414731,
++					"bottomRightLng": -75.608162
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Innes",
++		"number":    "112",
++		"direction": "desc",
++		"type":      "offramp",
++		"latitude":  45.415682,
++		"longitude": -75.612832,
++		"rampRects": [
++				{
++					"topLeftLat": 45.415292,
++					"topLeftLng": -75.612813,
++					"bottomRightLat": 45.414517,
++					"bottomRightLng": -75.612352
++				}
++			]
++	},
++	{
++		"highway":   "ON-417",
++		"name":      "Innes",
++		"number":    "112",
++		"direction": "desc",
++		"type":      "onramp",
++		"latitude":  45.414351,
++		"longitude": -75.61129,
++		"rampRects": [
++				{
++					"topLeftLat": 45.414566,
++					"topLeftLng": -75.612443,
++					"bottomRightLat": 45.414381,
++					"bottomRightLng": -75.61144
++				}
++			]
++	}
++]
+\ No newline at end of file
+diff --git a/Resources/Sample Routes/hwy-walkley-vanier.xml b/Resources/Sample Routes/hwy-walkley-vanier.xml
+new file mode 100644
+index 0000000..51e7126
+--- /dev/null
++++ b/Resources/Sample Routes/hwy-walkley-vanier.xml	
+@@ -0,0 +1,203 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<DirectionsResponse>
++ <status>OK</status>
++ <route>
++  <summary>ON-417 W</summary>
++  <leg>
++   <step>
++    <travel_mode>DRIVING</travel_mode>
++
++    <start_location>
++     <lat>45.4032800</lat>
++     <lng>-75.5835100</lng>
++    </start_location>
++    <end_location>
++     <lat>45.4010400</lat>
++     <lng>-75.5847100</lng>
++
++    </end_location>
++    <polyline>
++     <points>oybtG|kilMZhJFb@NVZPp@?z@W`@UtCqCb@Md@D</points>
++     <levels>B???@?????B</levels>
++    </polyline>
++    <duration>
++     <value>61</value>
++
++     <text>1 min</text>
++    </duration>
++    <html_instructions>Head &lt;b&gt;west&lt;/b&gt; toward &lt;b&gt;Walkley Rd W/Regional Road 74 W&lt;/b&gt;</html_instructions>
++    <distance>
++
++     <value>414</value>
++     <text>0.4 km</text>
++    </distance>
++   </step>
++   <step>
++    <travel_mode>DRIVING</travel_mode>
++    <start_location>
++
++     <lat>45.4010400</lat>
++     <lng>-75.5847100</lng>
++    </start_location>
++    <end_location>
++     <lat>45.3995300</lat>
++     <lng>-75.5891300</lng>
++    </end_location>
++
++    <polyline>
++     <points>okbtGlsilM@j@nG~UZfB</points>
++     <levels>B??B</levels>
++    </polyline>
++    <duration>
++     <value>55</value>
++     <text>1 min</text>
++
++    </duration>
++    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Walkley Rd W/Regional Road 74 W&lt;/b&gt;</html_instructions>
++    <distance>
++     <value>386</value>
++
++     <text>0.4 km</text>
++    </distance>
++   </step>
++   <step>
++    <travel_mode>DRIVING</travel_mode>
++    <start_location>
++     <lat>45.3995300</lat>
++
++     <lng>-75.5891300</lng>
++    </start_location>
++    <end_location>
++     <lat>45.4193300</lat>
++     <lng>-75.6501200</lng>
++    </end_location>
++    <polyline>
++
++     <points>abbtG`ojlMv@|E@|BGp@_@pAiArAyQbPSTCReGzEeEvCeCrAeC`A_NjDaC~@gD|BeD|DmAvB}AlDqAzEu@|FiAvP_@dDm@dD{@~CgAzCgAtBmBlCmBlB}AjAkD~AeCn@mM~AqAf@wAx@sCbC{B|Cu@~A{AfFu@vEWlEAnD`@vG^fCrEdRfBdJvA~JjAhMt@vRnEr`B</points>
++     <levels>B????@????@???@?@??@???@???@??@???@???A???@????@?B</levels>
++    </polyline>
++    <duration>
++     <value>275</value>
++     <text>5 mins</text>
++    </duration>
++
++    <html_instructions>Merge onto &lt;b&gt;ON-417 W&lt;/b&gt; via the ramp to &lt;b&gt;Ottawa&lt;/b&gt;</html_instructions>
++    <distance>
++     <value>6358</value>
++     <text>6.4 km</text>
++
++    </distance>
++   </step>
++   <step>
++    <travel_mode>DRIVING</travel_mode>
++    <start_location>
++     <lat>45.4193300</lat>
++     <lng>-75.6501200</lng>
++
++    </start_location>
++    <end_location>
++     <lat>45.4195300</lat>
++     <lng>-75.6554000</lng>
++    </end_location>
++    <polyline>
++     <points>y}etGflvlMj@tUa@`Eq@fC</points>
++
++     <levels>B??B</levels>
++    </polyline>
++    <duration>
++     <value>31</value>
++     <text>1 min</text>
++    </duration>
++    <html_instructions>Take exit &lt;b&gt;117&lt;/b&gt; for &lt;b&gt;Vanier Parkway&lt;/b&gt; toward &lt;b&gt;Promensade/Riverside Drive&lt;/b&gt;</html_instructions>
++
++    <distance>
++     <value>423</value>
++     <text>0.4 km</text>
++    </distance>
++   </step>
++   <step>
++    <travel_mode>DRIVING</travel_mode>
++
++    <start_location>
++     <lat>45.4195300</lat>
++     <lng>-75.6554000</lng>
++    </start_location>
++    <end_location>
++     <lat>45.4245100</lat>
++     <lng>-75.6621800</lng>
++
++    </end_location>
++    <polyline>
++     <points>a_ftGfmwlMk@xEm@|@qBnAsBjCm@lA}DdMo@rAy@dA}BfBiA`@eC^</points>
++     <levels>B??????@???B</levels>
++    </polyline>
++    <duration>
++     <value>118</value>
++
++     <text>2 mins</text>
++    </duration>
++    <html_instructions>Keep &lt;b&gt;right&lt;/b&gt; at the fork and merge onto &lt;b&gt;Regional Road 19/Vanier Pkwy N&lt;/b&gt;</html_instructions>
++    <distance>
++
++     <value>810</value>
++     <text>0.8 km</text>
++    </distance>
++   </step>
++   <step>
++    <travel_mode>DRIVING</travel_mode>
++    <start_location>
++
++     <lat>45.4245100</lat>
++     <lng>-75.6621800</lng>
++    </start_location>
++    <end_location>
++     <lat>45.4248200</lat>
++     <lng>-75.6570700</lng>
++    </end_location>
++
++    <polyline>
++     <points>e~ftGrwxlM}@}^</points>
++     <levels>BB</levels>
++    </polyline>
++    <duration>
++     <value>62</value>
++     <text>1 min</text>
++
++    </duration>
++    <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; at &lt;b&gt;Queen Mary St&lt;/b&gt;</html_instructions>
++    <distance>
++     <value>401</value>
++
++     <text>0.4 km</text>
++    </distance>
++   </step>
++   <duration>
++    <value>602</value>
++    <text>10 mins</text>
++   </duration>
++
++   <distance>
++    <value>8792</value>
++    <text>8.8 km</text>
++   </distance>
++   <start_location>
++    <lat>45.4032800</lat>
++    <lng>-75.5835100</lng>
++
++   </start_location>
++   <end_location>
++    <lat>45.4248200</lat>
++    <lng>-75.6570700</lng>
++   </end_location>
++   <start_address>Unnamed Rd, Ottawa, ON K1C, Canada</start_address>
++   <end_address>222 Queen Mary St, Ottawa, ON K1K 1S3, Canada</end_address>
++
++  </leg>
++  <copyrights>Map data ©2010 Google</copyrights>
++  <overview_polyline>
++   <points>oybtG|kilMZhJFb@NVZPp@?z@W`@UtCqCb@Md@D@j@nG~UrAdI@|BGp@_@pAiArAyQbPSTCReGzEeEvCeCrAeC`AwObEyC|AwAfAqAtA_AjAaBrC}AlD{@tCw@pESpBiAvP_@dDm@dD{@~CgAzCgAtBqCtD_CpBkBjAgBr@eCn@mM~AqAf@sBnAwBlB{B|C_B`EiAtE]fCYvFDrEZhE^fCrEdRfBdJvA~JjAhMZtGpAjc@bE~}AMpBmAnFOvBShAm@|@qBnAsBjCm@lA}DdMo@rAy@dA}BfBiA`@eC^}@}^</points>
++   <levels>B???@?????@?????@?????@?????@???@???????@??@????@???A???@????@??@???@?????@???@B</levels>
++  </overview_polyline>
++ </route>
++
++</DirectionsResponse>
+diff --git a/Resources/metadata.sqlite b/Resources/metadata.sqlite
+index 4dfff0d..55d8795 100644
+Binary files a/Resources/metadata.sqlite and b/Resources/metadata.sqlite differ
+diff --git a/ScenicRoute-Info.plist b/ScenicRoute-Info.plist
+index 3289444..1a6e0c0 100644
+--- a/ScenicRoute-Info.plist
++++ b/ScenicRoute-Info.plist
+@@ -11,7 +11,7 @@
+ 	<key>CFBundleIconFile</key>
+ 	<string></string>
+ 	<key>CFBundleIdentifier</key>
+-	<string>com.yourcompany.${PRODUCT_NAME:rfc1034identifier}</string>
++	<string>net.cyberdream.${PRODUCT_NAME:rfc1034identifier}</string>
+ 	<key>CFBundleInfoDictionaryVersion</key>
+ 	<string>6.0</string>
+ 	<key>CFBundleName</key>
+diff --git a/ScenicRoute.xcodeproj/project.pbxproj b/ScenicRoute.xcodeproj/project.pbxproj
+index 35fcc94..15c7ff5 100755
+--- a/ScenicRoute.xcodeproj/project.pbxproj
++++ b/ScenicRoute.xcodeproj/project.pbxproj
+@@ -34,6 +34,7 @@
+ 		9609C7B612AE0DE600763E12 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9609C7AE12AE0DE600763E12 /* SBJsonParser.m */; };
+ 		9609C7B712AE0DE600763E12 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9609C7B012AE0DE600763E12 /* SBJsonStreamWriter.m */; };
+ 		9609C7B812AE0DE600763E12 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9609C7B212AE0DE600763E12 /* SBJsonWriter.m */; };
++		9620ED2012C3EFC10068AE71 /* hwy-walkley-vanier.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9620ED0B12C3EF0A0068AE71 /* hwy-walkley-vanier.xml */; };
+ 		96210C4A127FB1BE00943D10 /* BaseAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96210C49127FB1BE00943D10 /* BaseAnnotation.m */; };
+ 		96210C55127FB4C100943D10 /* DetourOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 96210C54127FB4C100943D10 /* DetourOverlay.m */; };
+ 		963ABB7312B7A2F40016185E /* HighwayDetour.m in Sources */ = {isa = PBXBuildFile; fileRef = 963ABB6E12B7A2F40016185E /* HighwayDetour.m */; };
+@@ -148,6 +149,7 @@
+ 		9609C7B212AE0DE600763E12 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+ 		9609C7B312AE0DE600763E12 /* SBProxyForJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBProxyForJson.h; sourceTree = "<group>"; };
+ 		9609C7DE12AE0F6F00763E12 /* HighwayRamps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HighwayRamps.json; path = Resources/HighwayRamps.json; sourceTree = "<group>"; };
++		9620ED0B12C3EF0A0068AE71 /* hwy-walkley-vanier.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "hwy-walkley-vanier.xml"; path = "Resources/Sample Routes/hwy-walkley-vanier.xml"; sourceTree = "<group>"; };
+ 		96210C48127FB1BE00943D10 /* BaseAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseAnnotation.h; path = Annotations/BaseAnnotation.h; sourceTree = "<group>"; };
+ 		96210C49127FB1BE00943D10 /* BaseAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseAnnotation.m; path = Annotations/BaseAnnotation.m; sourceTree = "<group>"; };
+ 		96210C53127FB4C100943D10 /* DetourOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetourOverlay.h; path = Annotations/DetourOverlay.h; sourceTree = "<group>"; };
+@@ -495,6 +497,7 @@
+ 			children = (
+ 				9672EEA1128C96EC004256E1 /* gDirectionsResponse.xml */,
+ 				967C9AE712BC6DA000F76DDB /* hwy-walkley-split.xml */,
++				9620ED0B12C3EF0A0068AE71 /* hwy-walkley-vanier.xml */,
+ 			);
+ 			name = "Sample Routes";
+ 			sourceTree = "<group>";
+@@ -543,7 +546,14 @@
+ 			isa = PBXProject;
+ 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ScenicRoute" */;
+ 			compatibilityVersion = "Xcode 3.1";
++			developmentRegion = English;
+ 			hasScannedForEncodings = 1;
++			knownRegions = (
++				English,
++				Japanese,
++				French,
++				German,
++			);
+ 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+ 			projectDirPath = "";
+ 			projectRoot = "";
+@@ -565,6 +575,7 @@
+ 				55AC50A212BD78F3005B61C0 /* yp_icon.png in Resources */,
+ 				967C979B12BB210800F76DDB /* metadata.sqlite in Resources */,
+ 				967C9AE812BC6DA000F76DDB /* hwy-walkley-split.xml in Resources */,
++				9620ED2012C3EFC10068AE71 /* hwy-walkley-vanier.xml in Resources */,
+ 			);
+ 			runOnlyForDeploymentPostprocessing = 0;
+ 		};
+@@ -714,7 +725,7 @@
+ 				);
+ 				PREBINDING = NO;
+ 				PRODUCT_NAME = DataUtility;
+-				SDKROOT = iphoneos4.0;
++				SDKROOT = iphoneos;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -742,7 +753,7 @@
+ 				);
+ 				PREBINDING = NO;
+ 				PRODUCT_NAME = DataUtility;
+-				SDKROOT = iphoneos4.0;
++				SDKROOT = iphoneos;
+ 				ZERO_LINK = NO;
+ 			};
+ 			name = Release;
+@@ -756,7 +767,7 @@
+ 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+ 				GCC_WARN_UNUSED_VARIABLE = YES;
+ 				PREBINDING = NO;
+-				SDKROOT = iphoneos4.0;
++				SDKROOT = iphoneos;
+ 			};
+ 			name = Debug;
+ 		};
+@@ -770,7 +781,7 @@
+ 				GCC_WARN_UNUSED_VARIABLE = YES;
+ 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+ 				PREBINDING = NO;
+-				SDKROOT = iphoneos4.0;
++				SDKROOT = iphoneos;
+ 			};
+ 			name = Release;
+ 		};
